@@ -2,9 +2,6 @@
 #include "Jogo.h"
 int main()
 {
-    Jogo jogo;
-
-    
-
+    Jogo jogo; 
     return 0;
 }

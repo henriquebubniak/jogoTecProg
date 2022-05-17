@@ -1,11 +1,12 @@
 #include "Jogo.h"
 
-int Jogo::gravidade = 10;
+float Jogo::gravidade = 10.0;
 Jogo::Jogo(/* args */):
 janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "Jogo"), 
 greg(&lista_ent),
 greca(&greg),
-plataforma(Vector2f(0.f, WINDOW_SIZEY-70), Vector2f(WINDOW_SIZEX, 70))
+plataforma(Vector2f(0.f, WINDOW_SIZEY-70), Vector2f(WINDOW_SIZEX, 70)),
+gravidadet1(gravidade)
 {
     lista_ent.push_back(static_cast<Entidade*> (&greg));
     lista_ent.push_back(static_cast<Entidade*> (&greca));

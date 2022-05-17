@@ -7,7 +7,6 @@ class Greg: public Entidade
 private:
     int nvl_greg;
     float vel;
-    float vel_pulo;
     list<Entidade*>* p_lista_ent;
 public:
     Greg(list<Entidade*>* le = NULL);

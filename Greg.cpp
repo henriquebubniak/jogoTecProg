@@ -1,10 +1,11 @@
 #include "Greg.h"
 #include "Jogo.h"
+#include <iostream>
+using namespace std;
 Greg::Greg(list<Entidade*>* le):
 Entidade(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,40.f), 10), 
 nvl_greg(10),
-vel(1),
-vel_pulo(0)
+vel(1)
 {
     p_lista_ent = le;
     caixa.setFillColor(Color::White);
@@ -31,5 +32,7 @@ void Greg::move()
     if (velocidade.x < -0.3)
         velocidade.x = -0.3;
     caixa.move(velocidade);   
-    velocidade.y += 0.006;
+    velocidade.y += Jogo::get_g() * (0.001);
+    pos = caixa.getPosition();
+    cout << Jogo::get_g() * (0.001) << "vel.y: " << velocidade.y << endl;
 }

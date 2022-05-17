@@ -16,10 +16,12 @@ private:
     Greca greca;
     Obstaculo plataforma;
     list<Entidade*> lista_ent;
-    static int gravidade;
+    static float gravidade;
+    float gravidadet1;
 public:
     Jogo(/* args */);
-     ~Jogo();
-    static int get_g() { return gravidade; }
+    ~Jogo();
+    static float get_g() { return gravidade; }
 };
+
 

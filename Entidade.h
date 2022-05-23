@@ -19,9 +19,10 @@ public:
     void imprime();
     void setJanela(RenderWindow* j = NULL) { janela = j; }
     virtual void move() = 0;
-    void testa_colisao (Entidade* ent);
+    virtual void testa_colisao (Entidade* ent);
     Vector2f get_dim() { return dim; }
     Vector2f get_pos() { return pos; }
+    FloatRect get_GlobalBounds() { return caixa.getGlobalBounds(); }
 };
 
 

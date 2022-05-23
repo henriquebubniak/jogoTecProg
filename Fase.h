@@ -1,11 +1,17 @@
 #pragma once
-#include "Greca.h"
+#include <list>
+#include "Entidade.h"
+using namespace std;
 class Fase
 {
-private:
-    Greca greca;
+protected:
+    list<Entidade*> lista_ent;
+    RenderWindow* janela;
 public:
-    Fase(/* args */);
+    Fase(RenderWindow* j = NULL);
     ~Fase();
+    void move_ents();
+    void testa_colisao();
+    void imprime_ents();
 };
 

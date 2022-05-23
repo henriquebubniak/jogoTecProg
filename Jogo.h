@@ -3,6 +3,7 @@
 #define WINDOW_SIZEY  1000
 #include <SFML/Graphics.hpp>
 #include <list>
+#include <iostream>
 #include "FaseFloresta.h"
 using namespace sf;
 using namespace std;

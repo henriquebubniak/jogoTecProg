@@ -14,10 +14,6 @@ void Fase::move_ents()
 {
     for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
     {
-        (*i)->setJanela(janela);
-    }
-    for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
-    {
         (*i)->move();
     }
 }

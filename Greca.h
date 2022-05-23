@@ -1,11 +1,10 @@
 #pragma once
-#include "Entidade.h"
+#include "Inimigo.h"
 #include "Greg.h"
-class Greca: public Entidade
+class Greca: public Inimigo
 {
 private:
     Greg* greg;
-    float vel;
 public:
     Greca(Greg* g = NULL);
     ~Greca();

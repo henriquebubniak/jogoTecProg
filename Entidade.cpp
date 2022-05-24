@@ -1,7 +1,7 @@
 #include "Entidade.h"
 
-Entidade::Entidade(Vector2f p, Vector2f tam_cx):
-pos(p), caixa(tam_cx), dim(tam_cx)
+Entidade::Entidade(Vector2f p, Vector2f tam_cx, list<Entidade*>* ple):
+pos(p), caixa(tam_cx), dim(tam_cx), p_lista_ent(ple)
 {
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 Greg::Greg():
-Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,40.f), 10, 1), 
+Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,80.f), 10, 1), 
 nvl_greg(10)
 {
     caixa.setFillColor(Color::White);
@@ -11,8 +11,8 @@ nvl_greg(10)
 Greg::~Greg(){}
 
 
-    void Greg::testa_colisao (Entidade* ent)
-    {
+void Greg::testa_colisao (Entidade* ent)
+{
     FloatRect proxPos, posJog;
 
     posJog = caixa.getGlobalBounds();
@@ -60,4 +60,4 @@ Greg::~Greg(){}
         }
 
     }   
-    }
+}

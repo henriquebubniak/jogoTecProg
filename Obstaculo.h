@@ -10,4 +10,6 @@ public:
     Obstaculo(Vector2f pos, Vector2f dim);
     ~Obstaculo();
     void move(){}
+    void ataca(){}
+    void dano(int d) {}
 };

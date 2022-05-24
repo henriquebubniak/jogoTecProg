@@ -7,4 +7,5 @@ private:
 public:
     Inimigo(Vector2f p, Vector2f tam_cx, int h, float v);
     ~Inimigo();
+    void ataca(){}
 };

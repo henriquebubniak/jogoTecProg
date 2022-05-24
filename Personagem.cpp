@@ -10,3 +10,8 @@ vel(v)
 Personagem::~Personagem()
 {
 }
+
+void Personagem::dano(int d)
+{
+    hp -= d;
+}

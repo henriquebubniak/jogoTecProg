@@ -25,6 +25,10 @@ void Jogador::move()
     {
         velocidade.y = -2*vel;
     }
+    //if (Keyboard::isKeyPressed(Keyboard::F))
+    //{
+        ataca();
+    //}
     if (velocidade.x > 0.3)
         velocidade.x = 0.3;
     if (velocidade.x < -0.3)
@@ -34,4 +38,14 @@ void Jogador::move()
     pos = caixa.getPosition();
     cout << Jogo::get_g() * (0.001) << "vel.y: " << velocidade.y << endl;
     pode_pular = false;
+}
+void Jogador::ataca()
+{
+    if (velocidade.x > 0)
+    {
+        Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x, caixa.getPosition().y), 
+                                                                             Vector2f(10.f, 10.f), 0.1);
+        p_lista_ent->push_back(static_cast<Entidade*>(proj));
+                                      
+    }
 }

@@ -16,27 +16,6 @@ void Entidade::imprime()
 
 void Entidade::testa_colisao(Entidade* ent)
 {
-    /*if (ent->get_pos().x <= pos.x + dim.x && 
-        ent->get_pos().x + ent->get_dim().x > pos.x + dim.x &&
-        ent->get_pos().y <= pos.y + dim.y &&
-        ent->get_pos().y + dim.y >= pos.y )
-        caixa.setPosition(Vector2f(ent->get_pos().x - get_dim().x, caixa.getPosition().y));
-
-    if (ent->get_pos().x + ent->get_dim().x >= pos.x && 
-        ent->get_pos().x < pos.x                     &&
-        ent->get_pos().y <= pos.y + dim.y            &&
-        ent->get_pos().y + dim.y >= pos.y )
-        caixa.setPosition(Vector2f(ent->get_pos().x + ent->get_dim().x, caixa.getPosition().y));
-    if (ent->get_pos().x + ent->get_dim().x >= caixa.getPosition().x && 
-        ent->get_pos().x <= caixa.getPosition().x + caixa.getGlobalBounds().width       &&
-        ent->get_pos().y <= caixa.getPosition().y + caixa.getGlobalBounds().height            &&
-        ent->get_pos().y + ent->get_dim().y >= pos.y)
-        caixa.setPosition(Vector2f(caixa.getPosition().x, ent->get_pos().y - get_dim().y));
-    if (ent->get_pos().x + ent->get_dim().x >= pos.x && 
-        ent->get_pos().x <= pos.x + dim.x            &&
-        ent->get_pos().y + ent->get_dim().y >= pos.y &&
-        ent->get_pos().y <= pos.y)
-        caixa.setPosition(Vector2f(caixa.getPosition().x, ent->get_pos().y + ent->get_dim().y));*/
     FloatRect proxPos, posJog;
 
     posJog = caixa.getGlobalBounds();

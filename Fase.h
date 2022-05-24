@@ -13,7 +13,6 @@ public:
     void move_ents();
     void testa_colisao();
     void imprime_ents();
-
     void ataca_ents();
 };
 

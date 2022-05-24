@@ -24,11 +24,7 @@ void Jogador::move()
     if (Keyboard::isKeyPressed(Keyboard::Space) && pode_pular)
     {
         velocidade.y = -2*vel;
-    }
-    //if (Keyboard::isKeyPressed(Keyboard::F))
-    //{
-        ataca();
-    //}
+    }    
     if (velocidade.x > 0.3)
         velocidade.x = 0.3;
     if (velocidade.x < -0.3)
@@ -41,11 +37,17 @@ void Jogador::move()
 }
 void Jogador::ataca()
 {
-    if (velocidade.x > 0)
+    if (Keyboard::isKeyPressed(Keyboard::F) && pode_atirar)
     {
-        Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x, caixa.getPosition().y), 
-                                                                             Vector2f(10.f, 10.f), 0.1);
-        p_lista_ent->push_back(static_cast<Entidade*>(proj));
-                                      
+        if (velocidade.x > 0)
+        {
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), 20.f);
+            p_lista_ent->push_back(static_cast<Entidade*>(proj));     
+            proj->set_ple(p_lista_ent);
+            proj->setJanela(janela);               
+        }
+        pode_atirar = false;
     }
+    else if (!(Keyboard::isKeyPressed(Keyboard::F)))
+        pode_atirar = true;
 }

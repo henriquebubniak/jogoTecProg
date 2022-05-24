@@ -11,5 +11,6 @@ public:
     void move();
     bool colide(Entidade* ent);
     void dano(int d) {}
+    void testa_colisao(Entidade* ent);
 };
 

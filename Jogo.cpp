@@ -14,6 +14,7 @@ floresta(&janela)
                 janela.close();
         
         floresta.move_ents();
+        floresta.ataca_ents();
         floresta.testa_colisao();
         janela.clear();
         floresta.imprime_ents();

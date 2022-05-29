@@ -1,5 +1,6 @@
 #include "Projetil.h"
 #include "Jogo.h"
+
 Projetil::Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x):
 forca(f),
 Entidade(pos, tam_cx)
@@ -17,7 +18,7 @@ Projetil::~Projetil()
 
 void Projetil::move()
 {
-    caixa.move(velocidade); 
+    caixa.move(velocidade);
     velocidade.y += Jogo::get_g() * (0.001);
 }
 
@@ -25,7 +26,7 @@ bool Projetil::colide(Entidade* ent)
 {
     if (caixa.getGlobalBounds().intersects(ent->get_GlobalBounds()))
         return true;
-    else    
+    else
         return false;
 }
 
@@ -37,7 +38,7 @@ void Projetil::testa_colisao(Entidade* ent)
     proxPos = caixa.getGlobalBounds();
     proxPos.left += velocidade.x;
     proxPos.top += velocidade.y;
-    
+
     FloatRect posObst;
     posObst = ent->get_GlobalBounds();
 

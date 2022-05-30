@@ -1,7 +1,8 @@
 #include "Entidade.h"
+#include "Fase.h"
 
-Entidade::Entidade(Vector2f p, Vector2f tam_cx, list<Entidade*>* ple):
-pos(p), caixa(tam_cx), dim(tam_cx), p_lista_ent(ple)
+Entidade::Entidade(Vector2f p, Vector2f tam_cx, Fase* f):
+pos(p), caixa(tam_cx), dim(tam_cx), pfase(f)
 {
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);
@@ -10,7 +11,7 @@ Entidade::~Entidade()
 {
 
     janela = nullptr;
-    p_lista_ent = nullptr;
+    pfase = nullptr;
 
 }
 

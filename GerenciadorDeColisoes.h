@@ -19,10 +19,10 @@ private:
 public:
 
 
-    GerenciadorDeColisoes();
+    GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL);
     ~GerenciadorDeColisoes();
 
-    //Funções
+    //Funï¿½ï¿½es
 
     void testaColisoes ();
     void testaColisoesProjeteis();

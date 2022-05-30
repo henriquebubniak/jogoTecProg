@@ -42,16 +42,16 @@ void Jogador::ataca()
         if (velocidade.x >= 0)
         {
             Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), 20.f);
-            p_lista_ent->push_back(static_cast<Entidade*>(proj));
-            proj->set_ple(p_lista_ent);
+            pfase->ad_proj(proj);
+            proj->set_fase(pfase);
             proj->setJanela(janela);
         }
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - 8, caixa.getPosition().y), Vector2f(10.f, 10.f), -20.f);
-            p_lista_ent->push_back(static_cast<Entidade*>(proj));
-            proj->set_ple(p_lista_ent);
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - dim.x - 1, caixa.getPosition().y), Vector2f(10.f, 10.f), -20.f);
+            pfase->ad_proj(proj);
+            proj->set_fase(pfase);
             proj->setJanela(janela);
         }
         pode_atirar = false;

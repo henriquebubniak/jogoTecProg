@@ -5,6 +5,7 @@
 #define WINDOW_SIZEY 1000
 using namespace std;
 using namespace sf;
+class Fase;
 class Entidade
 {
 protected:
@@ -13,12 +14,12 @@ protected:
     Vector2f velocidade;
     RectangleShape caixa;
     RenderWindow* janela;
-    list<Entidade*>* p_lista_ent;
+    Fase* pfase;
 
     //bool podepular;
 
 public:
-    Entidade(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), list<Entidade*>* ple = NULL);
+    Entidade(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), Fase* f = NULL);
     virtual ~Entidade();
     void imprime();
     void setJanela(RenderWindow* j = NULL) { janela = j; }
@@ -29,7 +30,7 @@ public:
     Vector2f get_dim() { return dim; }
     Vector2f get_pos() { return pos; }
     FloatRect get_GlobalBounds() { return caixa.getGlobalBounds(); }
-    void set_ple(list<Entidade*>* ple) { p_lista_ent = ple; }
+    void set_fase(Fase* f) { pfase = f; }
     Vector2f get_velocidade (){return velocidade;}
 
     void set_velocidade_x(float x){velocidade.x = x;}

@@ -11,7 +11,7 @@ Entidade(pos, tam_cx)
 
 Projetil::~Projetil()
 {
-    p_lista_ent->remove(static_cast<Entidade*>(this));
+    pfase->rm_proj(this);
 }
 
 

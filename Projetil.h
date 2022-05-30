@@ -12,5 +12,6 @@ public:
     bool colide(Entidade* ent);
     void dano(int d) {}
     void testa_colisao(Entidade* ent);
+    int get_forca ();
 };
 

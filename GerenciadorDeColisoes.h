@@ -7,12 +7,17 @@
 #include<list>
 using namespace std;
 
-class GerenciadorDeColisoes {
+class GerenciadorDeColisoes
+{
+
+private:
+
+    list<Entidade*>* entidades;
+    list<Projetil*>* projeteis;
 
 
 public:
 
-    static list<Entidade*> entidades;
 
     GerenciadorDeColisoes();
     ~GerenciadorDeColisoes();
@@ -20,6 +25,10 @@ public:
     //Funções
 
     void testaColisoes ();
+    void testaColisoesProjeteis();
+    void testaColisoesEntes();
+    void setListaEntidades (list<Entidade*>* ent);
+    void setListaProjeteis(list<Projetil*>* proj);
 
 
 };

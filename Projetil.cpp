@@ -81,3 +81,9 @@ void Projetil::testa_colisao(Entidade* ent)
         //delete this;
     }
 }
+
+int Projetil:: get_forca (){
+
+return forca;
+
+}

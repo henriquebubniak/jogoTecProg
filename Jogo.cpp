@@ -1,11 +1,11 @@
 #include "Jogo.h"
 
-float Jogo::gravidade = 7.0;
+float Jogo::gravidade = 10.0;
 Jogo::Jogo(/* args */):
 janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"), 
 floresta(&janela)
 {
-    
+    janela.setFramerateLimit(120);
     while (janela.isOpen())
     {
         Event event;

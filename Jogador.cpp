@@ -13,26 +13,26 @@ void Jogador::move()
 {
     if (Keyboard::isKeyPressed(Keyboard::D))
     {
-        velocidade.x += 0.01*vel;
+        velocidade.x += vel;
     }    
     else if (Keyboard::isKeyPressed(Keyboard::A))
     {
-        velocidade.x -= 0.01*vel;
+        velocidade.x -= vel;
     }
     else
         velocidade.x -= velocidade.x*0.1;
     if (Keyboard::isKeyPressed(Keyboard::Space) && pode_pular)
     {
-        velocidade.y = -2*vel;
+        velocidade.y = -7*vel;
     }    
-    if (velocidade.x > 0.3)
-        velocidade.x = 0.3;
-    if (velocidade.x < -0.3)
-        velocidade.x = -0.3;
+    if (velocidade.x > 2)
+        velocidade.x = 2;
+    if (velocidade.x < -2)
+        velocidade.x = -2;
     caixa.move(velocidade);   
-    velocidade.y += Jogo::get_g() * (0.001);
+    velocidade.y += Jogo::get_g() * (0.016);
     pos = caixa.getPosition();
-    cout << Jogo::get_g() * (0.001) << "vel.y: " << velocidade.y << endl;
+    cout << Jogo::get_g() * (0.01) << "vel.y: " << velocidade.y << endl;
     pode_pular = false;
 }
 void Jogador::ataca()
@@ -41,7 +41,14 @@ void Jogador::ataca()
     {
         if (velocidade.x > 0)
         {
-            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), 20.f);
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), 60.f);
+            p_lista_ent->push_back(static_cast<Entidade*>(proj));     
+            proj->set_ple(p_lista_ent);
+            proj->setJanela(janela);               
+        }
+        if (velocidade.x < 0)
+        {
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - dim.x - 1, caixa.getPosition().y), Vector2f(10.f, 10.f), -60.f);
             p_lista_ent->push_back(static_cast<Entidade*>(proj));     
             proj->set_ple(p_lista_ent);
             proj->setJanela(janela);               

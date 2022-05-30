@@ -13,16 +13,16 @@ void Greca::move()
 {
     if (caixa.getPosition().x < greg->get_pos().x)
     {
-        velocidade.x += 0.01;
+        velocidade.x += vel;
     }    
     else if (caixa.getPosition().x > greg->get_pos().x)
     {
-        velocidade.x -= 0.01;
+        velocidade.x -= vel;
     }
-    if (velocidade.x > 0.07)
-        velocidade.x = 0.07;
-    else if (velocidade.x < -0.07)
-        velocidade.x = -0.07;
+    if (velocidade.x > vel*2)
+        velocidade.x = vel*2;
+    else if (velocidade.x < -vel*2)
+        velocidade.x = -vel*2;
     caixa.move(velocidade);
-    velocidade.y += Jogo::get_g() * 0.001;
+    velocidade.y += Jogo::get_g() * 0.016;
 }

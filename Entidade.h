@@ -14,9 +14,12 @@ protected:
     RectangleShape caixa;
     RenderWindow* janela;
     list<Entidade*>* p_lista_ent;
+
+    //bool podepular;
+
 public:
     Entidade(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), list<Entidade*>* ple = NULL);
-    ~Entidade();
+    virtual ~Entidade();
     void imprime();
     void setJanela(RenderWindow* j = NULL) { janela = j; }
     virtual void move() = 0;
@@ -27,6 +30,14 @@ public:
     Vector2f get_pos() { return pos; }
     FloatRect get_GlobalBounds() { return caixa.getGlobalBounds(); }
     void set_ple(list<Entidade*>* ple) { p_lista_ent = ple; }
+    Vector2f get_velocidade (){return velocidade;}
+
+    void set_velocidade_x(float x){velocidade.x = x;}
+    void set_velocidade_y(float y){velocidade.y = y;}
+
+    void set_pos_caixa (Vector2f pos){caixa.setPosition(pos);}
+
+    virtual void set_podepular (bool p) {};
 };
 
 

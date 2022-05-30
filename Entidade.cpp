@@ -7,7 +7,12 @@ pos(p), caixa(tam_cx), dim(tam_cx), p_lista_ent(ple)
     caixa.setPosition(pos);
 }
 Entidade::~Entidade()
-{}
+{
+
+    janela = nullptr;
+    p_lista_ent = nullptr;
+
+}
 
 void Entidade::imprime()
 {
@@ -22,7 +27,7 @@ void Entidade::testa_colisao(Entidade* ent)
     proxPos = caixa.getGlobalBounds();
     proxPos.left += velocidade.x;
     proxPos.top += velocidade.y;
-    
+
     FloatRect posObst;
     posObst = ent->caixa.getGlobalBounds();
 

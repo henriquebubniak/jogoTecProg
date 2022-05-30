@@ -26,7 +26,7 @@ public:
 
     void testaColisoes ();
     void testaColisoesProjeteis();
-    void testaColisoesEntes();
+    void testaColisoesEntidades ();
     void setListaEntidades (list<Entidade*>* ent);
     void setListaProjeteis(list<Projetil*>* proj);
 

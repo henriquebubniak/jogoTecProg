@@ -27,7 +27,7 @@ public:
     ~Jogo();
 
     //Funções
-    static float get_g() { return gravidade; }
+    static float get_g(); //{ return gravidade; }
 };
 
 

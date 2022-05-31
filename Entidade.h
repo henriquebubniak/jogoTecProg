@@ -31,7 +31,7 @@ public:
 
     //Funções
     void imprime();
-    void setJanela(RenderWindow* j = NULL) { janela = j; }
+    void setJanela(RenderWindow* j = NULL);
     virtual void testa_colisao (Entidade* ent);
 
     //virtuais puras

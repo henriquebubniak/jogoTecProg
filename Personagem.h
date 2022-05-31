@@ -19,6 +19,6 @@ public:
     void move() = 0;
     void ataca() = 0;
     void dano(int d);
-    void set_podepular (bool p){ pode_pular = p;}
+    void set_podepular (bool p);
 };
 

@@ -1,4 +1,4 @@
-#include "Greg.h"
+#include "Camarada.h"
 #include "Jogo.h"
 #include <iostream>
 
@@ -7,26 +7,26 @@ using namespace std;
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Greg::Greg():
+Camarada::Camarada():
 Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,80.f), 10, 1),
-nvl_greg(10)
+nvl_Camarada(10)
 {
     caixa.setFillColor(Color::White);
 }
 
-Greg::~Greg(){}
+Camarada::~Camarada(){}
 
 
 /*===================================================================*/
 
 /*==============================GETS================================*/
 
-RectangleShape Greg:: get_caixa(){
+RectangleShape Camarada:: get_caixa(){
 
     return caixa;
 }
 
-const Vector2f Greg:: get_pos(){
+const Vector2f Camarada:: get_pos(){
 
     return pos;
 }
@@ -35,7 +35,7 @@ const Vector2f Greg:: get_pos(){
 /*==============================TESTA COLISÃO================================*/
 
 
-void Greg::testa_colisao (Entidade* ent)
+void Camarada::testa_colisao (Entidade* ent)
 {
     FloatRect proxPos, posJog;
 

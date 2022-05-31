@@ -1,17 +1,17 @@
-#include "Greca.h"
+#include "Chefao.h"
 #include "Jogo.h"
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Greca::Greca(Greg* g):
+Chefao::Chefao(Camarada* g):
     Inimigo(Vector2f(WINDOW_SIZEX - 200.f, WINDOW_SIZEY - 400.f), Vector2f(200.f, 200.f), 100, 0.3)
 {
     caixa.setFillColor(Color::Red);
-    greg = g;
+    camarada = g;
 }
 
 
-Greca::~Greca()
+Chefao::~Chefao()
 {
 }
 
@@ -19,13 +19,13 @@ Greca::~Greca()
 
 /*======================MOVE==============================*/
 
-void Greca::move()
+void Chefao::move()
 {
-    if (caixa.getPosition().x < greg->get_pos().x)
+    if (caixa.getPosition().x < camarada->get_pos().x)
     {
         velocidade.x += vel*0.01;
     }
-    else if (caixa.getPosition().x > greg->get_pos().x)
+    else if (caixa.getPosition().x > camarada->get_pos().x)
     {
         velocidade.x -= vel*0.01;
     }

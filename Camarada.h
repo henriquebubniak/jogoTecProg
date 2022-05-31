@@ -2,18 +2,18 @@
 #include "Jogador.h"
 #include <list>
 using namespace std;
-class Greg: public Jogador
+class Camarada: public Jogador
 {
 private:
-    int nvl_greg;
+    int nvl_Camarada;
 
 public:
 
     //const destr
-    Greg();
-    ~Greg();
+    Camarada();
+    ~Camarada();
 
-    //Funções
+    //Funï¿½ï¿½es
     RectangleShape get_caixa();
     const Vector2f get_pos();
     void testa_colisao (Entidade* ent);

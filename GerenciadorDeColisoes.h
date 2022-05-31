@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Greg.h"
-#include "Greca.h"
+#include "Camarada.h"
+#include "Chefao.h"
 #include "Projetil.h"
 
 #include<list>

@@ -6,10 +6,15 @@ class Greg: public Jogador
 {
 private:
     int nvl_greg;
+
 public:
+
+    //const destr
     Greg();
     ~Greg();
-    RectangleShape get_caixa() {return caixa;}
-    const Vector2f get_pos() { return pos; }
+
+    //Funções
+    RectangleShape get_caixa();
+    const Vector2f get_pos();
     void testa_colisao (Entidade* ent);
 };

@@ -1,5 +1,8 @@
 #include "Jogador.h"
 #include "Jogo.h"
+
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Jogador::Jogador(Vector2f p, Vector2f tam_cx, int h, float v):
     Personagem(p, tam_cx, h, v)
 {
@@ -8,6 +11,10 @@ Jogador::Jogador(Vector2f p, Vector2f tam_cx, int h, float v):
 Jogador::~Jogador()
 {
 }
+
+/*===================================================================*/
+
+/*========================MOVE===================================*/
 
 void Jogador::move()
 {
@@ -35,6 +42,11 @@ void Jogador::move()
     cout << Jogo::get_g() * (0.016) << "vel.y: " << velocidade.y << endl;
     pode_pular = false;
 }
+
+/*===================================================================*/
+
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 void Jogador::ataca()
 {
     if (Keyboard::isKeyPressed(Keyboard::F) && pode_atirar)
@@ -60,3 +72,5 @@ void Jogador::ataca()
     else if (!(Keyboard::isKeyPressed(Keyboard::F)))
         pode_atirar = true;
 }
+
+/*===================================================================*/

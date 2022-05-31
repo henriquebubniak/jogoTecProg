@@ -1,6 +1,8 @@
 #include "GerenciadorDeColisoes.h"
 
-GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp) 
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
+GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp)
 {
     entidades = ple;
     projeteis = plp;
@@ -12,6 +14,10 @@ GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
     //Destruir todas as entidades alocadas dinamicamente e limpar a lista
 
 }
+
+/*===================================================================*/
+
+/*==================TESTES=========================*/
 
 void GerenciadorDeColisoes:: testaColisoes ()
 {
@@ -57,12 +63,12 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
             }
         }
         proj_rm = plista_rm.begin();
-        
+
         while(proj_rm != plista_rm.end())
         {
             projeteis->remove(*proj_rm);
             proj_rm++;
-            delete(*prev(proj_rm, 1)); 
+            delete(*prev(proj_rm, 1));
         }
         //delete (*plista_rm.end());
     }
@@ -147,8 +153,10 @@ void GerenciadorDeColisoes:: testaColisoesEntidades ()
     }
 
 
+/*===================================================================*/
 
 
+/*===============================SETS===============================*/
 
 }
 
@@ -163,5 +171,7 @@ void GerenciadorDeColisoes:: setListaProjeteis(list<Projetil*>* proj)
 
     projeteis = proj;
 }
+
+/*===================================================================*/
 
 

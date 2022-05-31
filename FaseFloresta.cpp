@@ -1,5 +1,7 @@
 #include "FaseFloresta.h"
 
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 FaseFloresta::FaseFloresta(RenderWindow* j):
 Fase(j),
 greg(),
@@ -20,3 +22,5 @@ plataforma(Vector2f(0.f, WINDOW_SIZEY-70), Vector2f(WINDOW_SIZEX, 70))
 FaseFloresta::~FaseFloresta()
 {
 }
+
+/*===================================================================*/

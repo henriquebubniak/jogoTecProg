@@ -1,9 +1,13 @@
 #include "Jogo.h"
 
+//Static
 float Jogo::gravidade = 10.0;
+
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Jogo::Jogo(/* args */):
-janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"),
-floresta(&janela)
+    janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"),
+    floresta(&janela)
 {
     janela.setFramerateLimit(120);
 
@@ -29,3 +33,5 @@ floresta(&janela)
 Jogo::~Jogo()
 {
 }
+
+/*===================================================================*/

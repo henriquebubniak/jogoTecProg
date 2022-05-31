@@ -15,17 +15,22 @@ protected:
 
     GerenciadorDeColisoes gdc;
 
+    float tempo;
+
 public:
 
     //Construtora e Destrutora
     Fase(RenderWindow* j = NULL);
     ~Fase();
 
-    //Funções
+    //Funï¿½ï¿½es
+    void atualiza();
     void move_ents();
     void testa_colisao();
     void imprime_ents();
     void ataca_ents();
+
+    void executa_fase(); //loop do jogo
 
     //adiciona
     void ad_proj(Projetil* p);

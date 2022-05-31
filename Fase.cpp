@@ -4,7 +4,8 @@
 
 Fase::Fase(RenderWindow* j):
 janela(j),
-gdc(&lista_ent, &lista_proj)
+gdc(&lista_ent, &lista_proj),
+tempo(0)
 {
 
 }
@@ -15,6 +16,19 @@ Fase::~Fase()
 
 /*===================================================================*/
 
+/*========================ATUALIZA==================================*/
+
+
+void Fase::atualiza()
+{
+    move_ents();
+    ataca_ents();
+    testa_colisao();
+    janela->clear();
+    imprime_ents();
+    janela->display();
+    tempo += 8.333;
+}
 /*==================ATACA ENTES=========================*/
 
 void Fase::ataca_ents()
@@ -26,7 +40,6 @@ void Fase::ataca_ents()
 }
 
 /*===================================================================*/
-
 
 /*==================MOVE ENTES=========================*/
 
@@ -94,3 +107,19 @@ void Fase::rm_ent(Entidade* e)
 }
 
 /*===================================================================*/
+
+/*==================EXECUTA FASE=========================*/
+
+void Fase::executa_fase()
+{
+    while (janela->isOpen())
+    {
+        Event event;
+        while (janela->pollEvent(event))
+            if (event.type == Event::Closed)
+                janela->close();
+
+        atualiza();
+    }
+}
+

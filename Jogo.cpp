@@ -11,7 +11,7 @@ Jogo::Jogo(/* args */):
 {
     janela.setFramerateLimit(120);
 
-    while (janela.isOpen())
+    /*while (janela.isOpen())
     {
         Event event;
         while (janela.pollEvent(event))
@@ -26,8 +26,8 @@ Jogo::Jogo(/* args */):
         janela.display();
 
 
-
-    }
+    }*/
+    floresta.executa_fase();
 }
 
 Jogo::~Jogo()

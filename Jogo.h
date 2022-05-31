@@ -26,7 +26,7 @@ public:
     Jogo(/* args */);
     ~Jogo();
 
-    //Funções
+    //Funï¿½ï¿½es
     static float get_g(); //{ return gravidade; }
 };
 

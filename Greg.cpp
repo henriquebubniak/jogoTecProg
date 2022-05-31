@@ -1,14 +1,38 @@
 #include "Greg.h"
 #include "Jogo.h"
 #include <iostream>
+
 using namespace std;
+
+
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Greg::Greg():
-Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,80.f), 10, 1), 
+Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,80.f), 10, 1),
 nvl_greg(10)
 {
     caixa.setFillColor(Color::White);
 }
+
 Greg::~Greg(){}
+
+
+/*===================================================================*/
+
+/*==============================GETS================================*/
+
+RectangleShape Greg:: get_caixa(){
+
+    return caixa;
+}
+
+const Vector2f Greg:: get_pos(){
+
+    return pos;
+}
+/*===================================================================*/
+
+/*==============================TESTA COLISÃO================================*/
 
 
 void Greg::testa_colisao (Entidade* ent)
@@ -19,7 +43,7 @@ void Greg::testa_colisao (Entidade* ent)
     proxPos = caixa.getGlobalBounds();
     proxPos.left += velocidade.x;
     proxPos.top += velocidade.y;
-    
+
     FloatRect posObst;
     posObst = ent->get_GlobalBounds();
 
@@ -59,5 +83,8 @@ void Greg::testa_colisao (Entidade* ent)
             caixa.setPosition(Vector2f(posJog.left, posObst.top + posObst.height));
         }
 
-    }   
+    }
 }
+
+
+/*===================================================================*/

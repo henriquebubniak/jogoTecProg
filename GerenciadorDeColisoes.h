@@ -18,15 +18,17 @@ private:
 
 public:
 
-
+    //construtora e destrutora
     GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL);
     ~GerenciadorDeColisoes();
 
-    //Fun��es
 
+    //testes
     void testaColisoes ();
     void testaColisoesProjeteis();
     void testaColisoesEntidades ();
+
+    //sets
     void setListaEntidades (list<Entidade*>* ent);
     void setListaProjeteis(list<Projetil*>* proj);
 

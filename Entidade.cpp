@@ -1,12 +1,17 @@
 #include "Entidade.h"
 #include "Fase.h"
 
+
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Entidade::Entidade(Vector2f p, Vector2f tam_cx, Fase* f):
 pos(p), caixa(tam_cx), dim(tam_cx), pfase(f)
 {
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);
 }
+
+
 Entidade::~Entidade()
 {
 
@@ -15,10 +20,21 @@ Entidade::~Entidade()
 
 }
 
+/*===================================================================*/
+
+
+/*==================IMPRIME=========================*/
+
 void Entidade::imprime()
 {
     janela->draw(caixa);
 }
+
+/*===================================================================*/
+
+
+
+/*==================TESTA COLISÃO=========================*/
 
 void Entidade::testa_colisao(Entidade* ent)
 {
@@ -69,3 +85,16 @@ void Entidade::testa_colisao(Entidade* ent)
 
     }
 }
+
+/*===================================================================*/
+
+
+/*==================SETS=========================*/
+
+void Entidade:: setJanela (RenderWindow* j){
+
+    janela = j;
+}
+
+/*===================================================================*/
+

@@ -1,5 +1,7 @@
 #include "Fase.h"
 
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Fase::Fase(RenderWindow* j):
 janela(j),
 gdc(&lista_ent, &lista_proj)
@@ -10,6 +12,11 @@ gdc(&lista_ent, &lista_proj)
 Fase::~Fase()
 {
 }
+
+/*===================================================================*/
+
+/*==================ATACA ENTES=========================*/
+
 void Fase::ataca_ents()
 {
     for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
@@ -17,6 +24,12 @@ void Fase::ataca_ents()
         (*i)->ataca();
     }
 }
+
+/*===================================================================*/
+
+
+/*==================MOVE ENTES=========================*/
+
 void Fase::move_ents()
 {
     for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
@@ -28,22 +41,18 @@ void Fase::move_ents()
             (*j)->move();
 }
 
+/*===================================================================*/
+
+/*==================TESTA COLISAO=========================*/
+
 void Fase::testa_colisao()
 {
     gdc.testaColisoes();
-    /*int ii = 0;
-    int jj = 0;
-    for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
-    {
-        for(list<Entidade*>::iterator j = lista_ent.begin(); j != lista_ent.end(); j++)
-        {
-            (*i)->testa_colisao(*j);
-            jj++;
-        }
-        ii++;
-        jj = 0;
-    }*/
 }
+
+/*===================================================================*/
+
+/*==================IMPRIME ENTES=========================*/
 
 void Fase::imprime_ents()
 {
@@ -57,17 +66,31 @@ void Fase::imprime_ents()
     }
 }
 
+/*===================================================================*/
+
+/*==================ADICIONA PROJETEIS=========================*/
+
 void Fase::ad_proj(Projetil* p)
 {
     lista_proj.push_back(p);
 }
+
+/*===================================================================*/
+
+/*==================REMOVEPROJETEIS=========================*/
 
 void Fase::rm_proj(Projetil* p)
 {
     lista_proj.remove(p);
 }
 
+/*===================================================================*/
+
+/*==================REMOVE ENTES=========================*/
+
 void Fase::rm_ent(Entidade* e)
 {
     lista_ent.remove(e);
 }
+
+/*===================================================================*/

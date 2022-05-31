@@ -1,6 +1,8 @@
 #include "Projetil.h"
 #include "Jogo.h"
 
+/*==================CONSTRUTORA E DESTRUTORA=========================*/
+
 Projetil::Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x):
 forca(f),
 Entidade(pos, tam_cx)
@@ -14,7 +16,9 @@ Projetil::~Projetil()
     pfase->rm_proj(this);
 }
 
+/*===================================================================*/
 
+/*==============================MOVE================================*/
 
 void Projetil::move()
 {
@@ -30,6 +34,10 @@ bool Projetil::colide(Entidade* ent)
         return false;
 }
 
+/*===================================================================*/
+
+/*==============================TESTA COLISAO================================*/
+/*
 void Projetil::testa_colisao(Entidade* ent)
 {
     FloatRect proxPos, posJog;
@@ -81,6 +89,10 @@ void Projetil::testa_colisao(Entidade* ent)
         //delete this;
     }
 }
+*/
+/*===================================================================*/
+
+/*==============================GETS================================*/
 
 int Projetil:: get_forca ()
 {
@@ -88,3 +100,5 @@ int Projetil:: get_forca ()
     return forca;
 
 }
+
+/*===================================================================*/

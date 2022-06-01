@@ -1,5 +1,5 @@
 #pragma once
-#include "Fase.h"
+#include "FaseFloresta.h"
 
 class Menu
 {
@@ -12,7 +12,7 @@ private:
     RenderWindow* janela;
     Font fonte;
     Texture imagem;
-    Sprite sprite;
+    Sprite bg;
     Vector2f pos_mouse;
 
     std::vector<string> nomes_botoes;

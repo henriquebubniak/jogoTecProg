@@ -9,7 +9,11 @@ class Jogador: public Personagem
 {
 protected:
 
-bool pode_atirar;
+    bool pode_atirar;
+
+    float auxt;
+
+    int tiros_tambor;
 
 public:
 
@@ -17,7 +21,7 @@ public:
     Jogador(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), int h = 10, float v = 1);
     ~Jogador();
 
-    //Funções
+    //Funï¿½ï¿½es
     void move();
     void ataca();
 };

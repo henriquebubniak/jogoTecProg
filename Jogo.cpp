@@ -7,8 +7,10 @@ float Jogo::gravidade = 10.0;
 
 Jogo::Jogo(/* args */):
     janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"),
-    floresta(&janela)
+    floresta(&janela),
+    menu(&janela)
 {
+    janela.setPosition(Vector2i(0.f, 0.f));
     janela.setFramerateLimit(120);
 
     /*while (janela.isOpen())
@@ -27,6 +29,7 @@ Jogo::Jogo(/* args */):
 
 
     }*/
+    menu.executa_menu();
     floresta.executa_fase();
 }
 

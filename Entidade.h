@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <list>
-#define WINDOW_SIZEX 2000
-#define WINDOW_SIZEY 1000
+#define WINDOW_SIZEX 3000
+#define WINDOW_SIZEY 1500
 using namespace std;
 
 using namespace sf;
@@ -29,7 +29,7 @@ public:
     Entidade(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), Fase* f = NULL);
     virtual ~Entidade();
 
-    //Funções
+    //Funï¿½ï¿½es
     void imprime();
     void setJanela(RenderWindow* j = NULL);
     virtual void testa_colisao (Entidade* ent);

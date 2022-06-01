@@ -4,7 +4,10 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Jogador::Jogador(Vector2f p, Vector2f tam_cx, int h, float v):
-    Personagem(p, tam_cx, h, v)
+    Personagem(p, tam_cx, h, v),
+    pode_atirar(true),
+    auxt(0),
+    tiros_tambor(6)
 {
 }
 
@@ -39,7 +42,7 @@ void Jogador::move()
     caixa.move(velocidade);
     velocidade.y += Jogo::get_g() * (0.016);
     pos = caixa.getPosition();
-    cout << Jogo::get_g() * (0.016) << "vel.y: " << velocidade.y << endl;
+    //cout << Jogo::get_g() * (0.016) << "vel.y: " << velocidade.y << endl;
     pode_pular = false;
 }
 
@@ -67,10 +70,20 @@ void Jogador::ataca()
             proj->setJanela(janela);
         }
         pode_atirar = false;
+        auxt = pfase->get_tempo();
+        tiros_tambor--;
     }
 
-    else if (!(Keyboard::isKeyPressed(Keyboard::F)))
-        pode_atirar = true;
+    else if ((pfase->get_tempo() - auxt) > 300.0 && !Keyboard::isKeyPressed(Keyboard::F))
+    {
+        if (tiros_tambor <= 0 && (pfase->get_tempo() - auxt) > 2000.0)
+        {
+            pode_atirar = true;
+            tiros_tambor = 6;
+        }
+        if (tiros_tambor > 0)
+            pode_atirar = true;
+    }
 }
 
 /*===================================================================*/

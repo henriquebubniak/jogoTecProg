@@ -23,11 +23,11 @@ void Jogador::move()
 {
     if (Keyboard::isKeyPressed(Keyboard::D))
     {
-        velocidade.x += vel;
+        velocidade.x += vel*0.05;
     }
     else if (Keyboard::isKeyPressed(Keyboard::A))
     {
-        velocidade.x -= vel;
+        velocidade.x -= vel*0.05;
     }
     else
         velocidade.x -= velocidade.x*0.1;

@@ -24,7 +24,7 @@ Inimigo::~Inimigo()
 
 void Inimigo::ataca()
 {
-    Vector2f aux_tiro = Vector2f(cam->get_pos().x - caixa.getPosition().x, cam->get_pos().y - caixa.getPosition().y);
+    Vector2f aux_tiro = Vector2f(cam->get_pos().x - caixa.getPosition().x, cam->get_pos().y + (cam->get_dim().y/2) - caixa.getPosition().y);
     float mod = sqrt(aux_tiro.x*aux_tiro.x + aux_tiro.y*aux_tiro.y);
     cout << aux_tiro.x << ", "  << aux_tiro.y << endl;
     cout << mod << endl;
@@ -44,7 +44,7 @@ void Inimigo::ataca()
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y), Vector2f(20.f, 10.f), aux_tiro.x, aux_tiro.y);
+            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y), Vector2f(20.f, 10.f), aux_tiro.x, aux_tiro.y - (abs(cam->get_pos().x - caixa.getPosition().x)/WINDOW_SIZEX) );
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);

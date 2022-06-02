@@ -27,6 +27,7 @@ void Personagem::dano(int d)
     {
         pfase->rm_ent(static_cast<Entidade*>(this));
     }
+    velocidade = Vector2f(0.f, 0.f);
 }
 
 /*===================================================================*/

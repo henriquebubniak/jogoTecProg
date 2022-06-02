@@ -10,10 +10,10 @@ private:
 public:
 
     //Construtora e destrutoras
-    Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x);
+    Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x, float vel_y = 0.0);
     ~Projetil();
 
-    //Funções
+    //Funï¿½ï¿½es
     void ataca(){}
     void move();
     bool colide(Entidade* ent);

@@ -1,4 +1,5 @@
-class Militar1
+#include "Inimigo.h"
+class Militar1: public Inimigo
 {
 private:
     /* data */

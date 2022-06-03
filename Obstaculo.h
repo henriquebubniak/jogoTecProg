@@ -7,9 +7,8 @@ using namespace sf;
 class Obstaculo: public Entidade
 {
 
-private:
+protected:
 
-    RectangleShape caixa;
 
 public:
 
@@ -17,7 +16,7 @@ public:
     Obstaculo(Vector2f pos, Vector2f dim);
     ~Obstaculo();
 
-    //Funções
+    //Funï¿½ï¿½es
     void move(){}
     void ataca(){}
     void dano(int d) {}

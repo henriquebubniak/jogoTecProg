@@ -23,11 +23,11 @@ void Jogador::move()
 {
     if (Keyboard::isKeyPressed(Keyboard::D))
     {
-        velocidade.x += vel*0.05;
+        velocidade.x += vel*0.1;
     }
     else if (Keyboard::isKeyPressed(Keyboard::A))
     {
-        velocidade.x -= vel*0.05;
+        velocidade.x -= vel*0.1;
     }
     else
         velocidade.x -= velocidade.x*0.1;
@@ -35,10 +35,10 @@ void Jogador::move()
     {
         velocidade.y = -7*vel;
     }
-    if (velocidade.x > 2)
-        velocidade.x = 2;
-    if (velocidade.x < -2)
-        velocidade.x = -2;
+    if (velocidade.x > 2*vel)
+        velocidade.x = 2*vel;
+    if (velocidade.x < -2*vel)
+        velocidade.x = -2*vel;
     caixa.move(velocidade);
     velocidade.y += Jogo::get_g() * (0.016);
     pos = caixa.getPosition();

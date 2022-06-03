@@ -22,6 +22,7 @@
 				"Projetil.cpp",
 				"GerenciadorDeColisoes.cpp",
 				"Menu.cpp",
+				"Lama.cpp",
 				"-I",
 				"/opt/homebrew/Cellar/sfml/2.5.1_1/include",
 				"-o",

@@ -1,8 +1,7 @@
 #pragma once
+
 #include "Inimigo.h"
 #include "Camarada.h"
-
-
 
 class Militar1: public Inimigo
 {

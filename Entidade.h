@@ -1,10 +1,12 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <list>
+
 #define WINDOW_SIZEX 3000
 #define WINDOW_SIZEY 1500
-using namespace std;
 
+using namespace std;
 using namespace sf;
 
 class Fase;

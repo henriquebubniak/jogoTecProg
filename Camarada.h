@@ -1,7 +1,10 @@
 #pragma once
+
 #include "Jogador.h"
 #include <list>
+
 using namespace std;
+
 class Camarada: public Jogador
 {
 private:

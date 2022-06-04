@@ -6,6 +6,7 @@
 #include "Militar1.h"
 
 #include<list>
+
 using namespace std;
 
 class GerenciadorGrafico{

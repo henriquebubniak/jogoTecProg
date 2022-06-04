@@ -3,9 +3,9 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Fase::Fase(RenderWindow* j):
-janela(j),
-gdc(&lista_ent, &lista_proj),
-tempo(0)
+    janela(j),
+    gdc(&lista_ent, &lista_proj),gg(&lista_ent, &lista_proj),
+    tempo(0)
 {
 
 }
@@ -69,6 +69,7 @@ void Fase::testa_colisao()
 
 void Fase::imprime_ents()
 {
+/*
     if (lista_proj.size() != 0)
         for (list<Projetil*>::iterator j = lista_proj.begin(); j != lista_proj.end(); j++)
             (*j)->imprime();
@@ -77,6 +78,9 @@ void Fase::imprime_ents()
     {
         (*i)->imprime();
     }
+*/
+
+    gg.imprimeEntes();
 }
 
 /*===================================================================*/

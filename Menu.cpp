@@ -51,7 +51,7 @@ void Menu::set_valores()
 void Menu::loop_eventos()
 {
     Vector2i pos_mouse_aux;
-    FaseFloresta* faseflor = NULL; 
+    FaseFloresta* faseflor = NULL;
     pos_mouse_aux = Mouse::getPosition();
     pos_mouse = janela->mapPixelToCoords(pos_mouse_aux);
     FloatRect botao_floresta;
@@ -66,17 +66,17 @@ void Menu::loop_eventos()
             if (event.type == Event::Closed)
                 janela->close();
         if (Keyboard::isKeyPressed(Keyboard::Down))
-        {            
+        {
             pos++;
             textos[pos].setOutlineThickness(5);
             textos[pos].setOutlineColor(Color::Red);
             textos[pos - 1].setOutlineThickness(1);
-            textos[pos - 1].setOutlineColor(Color::Black);        
+            textos[pos - 1].setOutlineColor(Color::Black);
         }
         if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 1)
         {
             faseflor = new FaseFloresta(janela);
-            faseflor->executa_fase();    
+            faseflor->executa_fase();
         }
         imprime();
     }
@@ -101,7 +101,7 @@ void Menu::imprime()
 
 void Menu::executa_menu()
 {
-    loop_eventos(); 
+    loop_eventos();
 }
 
 bool bfloresta (Vector2f v, Vector2i i)
@@ -113,7 +113,7 @@ bool bfloresta (Vector2f v, Vector2i i)
     {
         cout << "true" << endl;*/
         return false;
-    /*}    
+    /*}
     else
     {
         cout << "false" << endl;

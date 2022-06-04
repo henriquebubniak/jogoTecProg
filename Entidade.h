@@ -45,6 +45,8 @@ public:
     Vector2f get_pos() { return pos; }
     Vector2f get_velocidade (){return velocidade;}
     FloatRect get_GlobalBounds() { return caixa.getGlobalBounds(); }
+    RenderWindow* get_janela (){return janela;}
+    RectangleShape get_caixa (){return caixa;}
 
     //sets
     void set_fase(Fase* f) { pfase = f; }

@@ -3,6 +3,7 @@
 #include "Entidade.h"
 #include "Projetil.h"
 #include "GerenciadorDeColisoes.h"
+#include "GerenciadorGrafico.h"
 using namespace std;
 class Fase
 {
@@ -14,6 +15,7 @@ protected:
     RenderWindow* janela;
 
     GerenciadorDeColisoes gdc;
+    GerenciadorGrafico gg;
 
     float tempo;
 

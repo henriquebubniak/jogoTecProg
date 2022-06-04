@@ -28,8 +28,6 @@ public:
     //Fun��es
     void atualiza();
     void move_ents();
-    void testa_colisao();
-    void imprime_ents();
     void ataca_ents();
 
     void executa_fase(); //loop do jogo

@@ -54,34 +54,6 @@ void Fase::move_ents()
 
 /*===================================================================*/
 
-/*==================TESTA COLISAO=========================*/
-
-void Fase::testa_colisao()
-{
-    gdc.testaColisoes();
-}
-
-/*===================================================================*/
-
-/*==================IMPRIME ENTES=========================*/
-
-void Fase::imprime_ents()
-{
-/*
-    if (lista_proj.size() != 0)
-        for (list<Projetil*>::iterator j = lista_proj.begin(); j != lista_proj.end(); j++)
-            (*j)->imprime();
-
-    for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
-    {
-        (*i)->imprime();
-    }
-*/
-
-    gg.imprimeEntes();
-}
-
-/*===================================================================*/
 
 /*==================ADICIONA PROJETEIS=========================*/
 

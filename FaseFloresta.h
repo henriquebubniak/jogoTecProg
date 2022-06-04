@@ -23,5 +23,7 @@ public:
     //construtora e destrutora
     FaseFloresta(RenderWindow* j = NULL);
     ~FaseFloresta();
+
+    void inicializa ();
 };
 

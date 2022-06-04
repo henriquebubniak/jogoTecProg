@@ -22,73 +22,6 @@ Entidade::~Entidade()
 
 /*===================================================================*/
 
-
-/*==================IMPRIME=========================*/
-
-void Entidade::imprime()
-{
-    janela->draw(caixa);
-}
-
-/*===================================================================*/
-
-
-
-/*==================TESTA COLISÃO=========================*/
-
-void Entidade::testa_colisao(Entidade* ent)
-{
-    FloatRect proxPos, posJog;
-
-    posJog = caixa.getGlobalBounds();
-    proxPos = caixa.getGlobalBounds();
-    proxPos.left += velocidade.x;
-    proxPos.top += velocidade.y;
-
-    FloatRect posObst;
-    posObst = ent->caixa.getGlobalBounds();
-
-    if (proxPos.intersects(posObst))
-    {
-        if (posJog.left < posObst.left                                 &&
-            posJog.left + posJog.width < posObst.left + posObst.width &&
-            posJog.top < posObst.top + posObst.height                  &&
-            posJog.top + posJog.height > posObst.top) //colisão a esquerda.
-        {
-            velocidade.x = 0;
-            caixa.setPosition(Vector2f(posObst.left - posJog.width, posJog.top));
-        }
-        if (posJog.left > posObst.left                                 &&
-            posJog.left + posJog.width > posObst.left + posObst.width &&
-            posJog.top < posObst.top + posObst.height                  &&
-            posJog.top + posJog.height > posObst.top) //colisão a direita.
-        {
-            velocidade.x = 0;
-            caixa.setPosition(Vector2f(posObst.left + posObst.width, posJog.top));
-        }
-        if (posJog.left < posObst.left + posObst.width                 &&
-            posJog.left + posJog.width > posObst.left                 &&
-            posJog.top < posObst.top                                   &&
-            posJog.top + posJog.height < posObst.top + posObst.height) //colisão acima.
-        {
-            velocidade.y = 0;
-            caixa.setPosition(Vector2f(posJog.left, posObst.top - posJog.height));
-        }
-        if (posJog.left < posObst.left + posObst.width                 &&
-            posJog.left + posJog.width > posObst.left                 &&
-            posJog.top > posObst.top                                   &&
-            posJog.top + posJog.height > posObst.top + posObst.height) //colisão acima.
-        {
-            velocidade.y = 0;
-            caixa.setPosition(Vector2f(posJog.left, posObst.top + posObst.height));
-        }
-
-    }
-}
-
-/*===================================================================*/
-
-
 /*==================SETS=========================*/
 
 void Entidade:: setJanela (RenderWindow* j){
@@ -96,5 +29,65 @@ void Entidade:: setJanela (RenderWindow* j){
     janela = j;
 }
 
+void Entidade:: set_fase(Fase* f){
+
+    pfase = f;
+}
+
+void Entidade:: set_velocidade_x (float x){
+
+    velocidade.x = x;
+}
+
+void Entidade:: set_velocidade_y (float y){
+
+    velocidade.y = y;
+}
+
+void Entidade:: set_pos_caixa (Vector2f pos){
+
+    caixa.setPosition(pos);
+}
+
+void Entidade:: set_podepular (bool p){
+
+}
+
 /*===================================================================*/
+
+
+/*==================GETS=========================*/
+
+Vector2f Entidade:: get_dim (){
+
+    return dim;
+}
+
+Vector2f Entidade:: get_pos (){
+
+    return pos;
+}
+
+Vector2f Entidade:: get_velocidade (){
+
+    return velocidade;
+}
+
+FloatRect Entidade:: get_GlobalBounds (){
+
+    return caixa.getGlobalBounds();
+}
+
+RenderWindow* Entidade:: get_janela (){
+
+    return janela;
+}
+
+RectangleShape Entidade:: get_caixa (){
+
+    return caixa;
+}
+
+/*===================================================================*/
+
 

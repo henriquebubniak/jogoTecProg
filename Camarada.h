@@ -16,5 +16,4 @@ public:
     //Fun��es
     RectangleShape get_caixa();
     const Vector2f get_pos();
-    void testa_colisao (Entidade* ent);
 };

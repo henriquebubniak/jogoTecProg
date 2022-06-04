@@ -39,7 +39,8 @@ public:
     void rm_proj(Projetil* p);
     void rm_ent(Entidade* e);
 
-    float get_tempo() { return tempo; }
+    //get
+    float get_tempo();
 
 };
 

@@ -11,7 +11,6 @@ GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projeti
 GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
 {
 
-    //Destruir todas as entidades alocadas dinamicamente e limpar a lista
 
 }
 
@@ -22,29 +21,24 @@ GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
 void GerenciadorDeColisoes:: testaColisoes ()
 {
 
-    /** 1-Criar dois iteradores para percorrer a lista
-     *
-     *  2- Criar um loop aninhado percorrendo cada elemento da lista a partir
-     *      do atual e realizar os devidos testes de colisao
-     *
-     *
-     */
+    //Chama as funcoes de teste especificas
     testaColisoesProjeteis();
     testaColisoesEntidades();
 }
 
 void GerenciadorDeColisoes:: testaColisoesProjeteis()
 {
-    list<Projetil*> plista_rm;
+
     /** 1- Criar dois iteradores, um para a lista de entidades e outro para a lista de projeteis
      *
      *  2- Testar se houve colis�o
      *
-     *  3- Em caso positivo, testar se a entidade � viva ou n�o (pode sofrer dano)
+     *  3- Em caso positivo, testar se a entidade eh viva ou nao (pode sofrer dano)
      *
      *  4- Caso o seja, aplicar o dano.
      */
 
+    list<Projetil*> plista_rm;
     list<Entidade*>::iterator ent;
     list<Projetil*>::iterator proj;
     list<Projetil*>::iterator proj_rm;
@@ -70,7 +64,6 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
             proj_rm++;
             delete(*prev(proj_rm, 1));
         }
-        //delete (*plista_rm.end());
     }
 
 }
@@ -82,7 +75,7 @@ void GerenciadorDeColisoes:: testaColisoesEntidades ()
      *
      *  2- Loop aninhado
      *
-     *  3- testar colis�es sem repeti��es!!!
+     *  3- testar colisoes sem repeticoes!!!
      *
      */
 

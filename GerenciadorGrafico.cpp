@@ -3,10 +3,11 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorGrafico:: GerenciadorGrafico(list<Entidade*>* ple, list<Projetil*>* plp)
+GerenciadorGrafico:: GerenciadorGrafico(list<Entidade*>* ple, list<Projetil*>* plp, RenderWindow* j)
 {
     entidades = ple;
     projeteis = plp;
+    janela = j;
 }
 
 GerenciadorGrafico:: ~GerenciadorGrafico()
@@ -48,7 +49,7 @@ void GerenciadorGrafico:: imprimeProjeteis()
         for (proj = projeteis->begin(); proj != projeteis->end(); proj++)
         {
 
-            ((*proj)->get_janela())->draw((*proj)->get_caixa());
+            janela->draw((*proj)->get_caixa());
         }
     }
 
@@ -70,9 +71,21 @@ void GerenciadorGrafico:: imprimeEntidades()
         for (ent = entidades->begin(); ent != entidades->end(); ent++)
         {
 
-            ((*ent)->get_janela())->draw((*ent)->get_caixa());
+            janela->draw((*ent)->get_caixa());
         }
     }
+}
+
+/*===================================================================*/
+
+/*==================IMPRIME=========================*/
+
+void GerenciadorGrafico:: atualizaJanela()
+{
+
+    janela->clear();
+    imprimeEntes();
+    janela->display();
 }
 
 /*===================================================================*/
@@ -81,12 +94,17 @@ void GerenciadorGrafico:: imprimeEntidades()
 
 void GerenciadorGrafico:: setListaEntidades (list<Entidade*>* ent)
 {
-
+    entidades = ent;
 }
 
 void GerenciadorGrafico:: setListaProjeteis (list<Projetil*>* proj)
 {
+    projeteis = proj;
+}
 
+void GerenciadorGrafico:: setJanela (RenderWindow* j)
+{
+    janela = j;
 }
 
 /*===================================================================*/

@@ -4,7 +4,7 @@
 
 Fase::Fase(RenderWindow* j):
     janela(j),
-    gdc(&lista_ent, &lista_proj),gg(&lista_ent, &lista_proj),
+    gdc(&lista_ent, &lista_proj),gg(&lista_ent, &lista_proj, janela),
     tempo(0)
 {
 
@@ -23,10 +23,8 @@ void Fase::atualiza()
 {
     move_ents();
     ataca_ents();
-    testa_colisao();
-    janela->clear();
-    imprime_ents();
-    janela->display();
+    gdc.testaColisoes();
+    gg.atualizaJanela();
     tempo += 8.333;
 }
 /*==================ATACA ENTES=========================*/

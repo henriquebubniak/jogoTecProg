@@ -15,20 +15,25 @@ private:
     list<Entidade*>* entidades;
     list<Projetil*>* projeteis;
 
+    RenderWindow* janela;
+
 public:
 
     //construtora e destrutora
-    GerenciadorGrafico(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL);
+    GerenciadorGrafico(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL, RenderWindow* j = NULL);
     ~GerenciadorGrafico();
 
-    //testes
+    //Draw
     void imprimeEntes();
     void imprimeProjeteis();
     void imprimeEntidades();
+    void atualizaJanela();
 
     //sets
     void setListaEntidades (list<Entidade*>* ent);
     void setListaProjeteis(list<Projetil*>* proj);
+    void setJanela (RenderWindow* j);
+
 
 
 };

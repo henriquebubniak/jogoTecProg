@@ -20,6 +20,5 @@ public:
     void dano(int d) {}
     int get_forca ();
 
-    //void testa_colisao(Entidade* ent);
 };
 

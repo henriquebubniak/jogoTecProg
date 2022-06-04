@@ -17,6 +17,6 @@ public:
     Militar1(Camarada* g = NULL);
     ~Militar1();
 
-    //Funcao
+    //Funcoes
     void move();
 };

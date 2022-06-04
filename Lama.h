@@ -1,3 +1,4 @@
+#pragma once
 #include "Obstaculo.h"
 
 class Lama: public Obstaculo

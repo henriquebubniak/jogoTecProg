@@ -36,7 +36,7 @@ void Inimigo::ataca()
 
         if (velocidade.x >= 0)
         {
-            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), "imagens/projetil.png", aux_tiro.x, aux_tiro.y);
+            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), "imagens/projetild.png", aux_tiro.x, aux_tiro.y);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);
@@ -44,7 +44,7 @@ void Inimigo::ataca()
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y),"imagens/projetil.png", aux_tiro.x, aux_tiro.y - (abs(cam->get_pos().x - caixa.getPosition().x)/WINDOW_SIZEX) );
+            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y),"imagens/projetile.png", aux_tiro.x, aux_tiro.y - (abs(cam->get_pos().x - caixa.getPosition().x)/WINDOW_SIZEX) );
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);

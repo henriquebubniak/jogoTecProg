@@ -1,10 +1,12 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <list>
+
 #define WINDOW_SIZEX 3000
 #define WINDOW_SIZEY 1500
-using namespace std;
 
+using namespace std;
 using namespace sf;
 
 class Fase;
@@ -30,9 +32,7 @@ public:
     virtual ~Entidade();
 
     //Fun��es
-    void imprime();
     void setJanela(RenderWindow* j = NULL);
-    virtual void testa_colisao (Entidade* ent);
 
     //virtuais puras
     virtual void move() = 0;
@@ -41,19 +41,26 @@ public:
 
 
     //gets
-    Vector2f get_dim() { return dim; }
-    Vector2f get_pos() { return pos; }
-    Vector2f get_velocidade (){return velocidade;}
-    FloatRect get_GlobalBounds() { return caixa.getGlobalBounds(); }
+    Vector2f get_dim();
+    Vector2f get_pos();
+    Vector2f get_velocidade ();
+    FloatRect get_GlobalBounds();
+    RenderWindow* get_janela ();
+    RectangleShape get_caixa ();
 
     //sets
-    void set_fase(Fase* f) { pfase = f; }
-    void set_velocidade_x(float x){velocidade.x = x;}
-    void set_velocidade_y(float y){velocidade.y = y;}
-    void set_pos_caixa (Vector2f pos){caixa.setPosition(pos);}
-    virtual void set_podepular (bool p) {}
+    //void set_fase(Fase* f) { pfase = f; }
+    //void set_velocidade_x(float x){velocidade.x = x;}
+    //void set_velocidade_y(float y){velocidade.y = y;}
+    //void set_pos_caixa (Vector2f pos){caixa.setPosition(pos);}
+    //virtual void set_podepular (bool p) {}
     virtual void set_slowpersonagem() {}
     virtual void set_velmaxpersonagem() {}
+    void set_fase(Fase* f);
+    void set_velocidade_x(float x);
+    void set_velocidade_y(float y);
+    void set_pos_caixa (Vector2f pos);
+    virtual void set_podepular (bool p);
 };
 
 

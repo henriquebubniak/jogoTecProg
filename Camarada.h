@@ -1,7 +1,10 @@
 #pragma once
+
 #include "Jogador.h"
 #include <list>
+
 using namespace std;
+
 class Camarada: public Jogador
 {
 private:
@@ -16,5 +19,4 @@ public:
     //Fun��es
     RectangleShape get_caixa();
     const Vector2f get_pos();
-    void testa_colisao (Entidade* ent);
 };

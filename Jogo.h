@@ -28,8 +28,8 @@ public:
     Jogo(/* args */);
     ~Jogo();
 
-    //Fun��es
-    static float get_g(); //{ return gravidade; }
+    //Funcoes
+    static float get_g();
 };
 
 

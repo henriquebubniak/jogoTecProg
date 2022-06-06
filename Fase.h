@@ -1,10 +1,14 @@
 #pragma once
+
 #include <list>
 #include "Entidade.h"
 #include "Projetil.h"
 #include "Obstaculo.h"
 #include "GerenciadorDeColisoes.h"
+#include "GerenciadorGrafico.h"
+
 using namespace std;
+
 class Fase
 {
 protected:
@@ -16,6 +20,7 @@ protected:
     RenderWindow* janela;
 
     GerenciadorDeColisoes gdc;
+    GerenciadorGrafico gg;
 
     float tempo;
 
@@ -28,8 +33,6 @@ public:
     //Fun��es
     void atualiza();
     void move_ents();
-    void testa_colisao();
-    void imprime_ents();
     void ataca_ents();
 
     void executa_fase(); //loop do jogo
@@ -41,7 +44,8 @@ public:
     void rm_proj(Projetil* p);
     void rm_ent(Entidade* e);
 
-    float get_tempo() { return tempo; }
+    //get
+    float get_tempo();
 
 };
 

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Entidade.h"
 
 class Projetil: public Entidade
@@ -20,6 +21,5 @@ public:
     void dano(int d) {}
     int get_forca ();
 
-    //void testa_colisao(Entidade* ent);
 };
 

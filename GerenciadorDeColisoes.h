@@ -2,9 +2,10 @@
 
 #include "Entidade.h"
 #include "Projetil.h"
+#include "Militar1.h"
 #include "Obstaculo.h"
-
 #include<list>
+
 using namespace std;
 
 class GerenciadorDeColisoes

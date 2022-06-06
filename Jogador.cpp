@@ -64,7 +64,7 @@ void Jogador::ataca()
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - 1, caixa.getPosition().y + 15), "imagens/projetile.png", -20.f);
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - 41, caixa.getPosition().y + 15), "imagens/projetile.png", -20.f);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);

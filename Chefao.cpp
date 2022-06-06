@@ -4,7 +4,7 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Chefao::Chefao(Camarada* g):
-    Inimigo(Vector2f(WINDOW_SIZEX - 200.f, WINDOW_SIZEY - 400.f), "imagens/Chefao.png", 100, 0.3, g)
+    Inimigo(Vector2f(WINDOW_SIZEX - 200.f, WINDOW_SIZEY - 400.f), "imagens/Chefaov21.png", 100, 0.3, g)
 {
     camarada = g;
 }

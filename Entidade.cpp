@@ -11,7 +11,7 @@ pos(p), pfase(f)
 
         if(!textura.loadFromFile(caminhoTextura))
         {
-            cerr << "ERRO: Não foi possivel carregar a textura"<< endl;
+            cerr << "ERRO: Nao foi possivel carregar a textura"<< endl;
         }
 
         caixa.setTexture(textura);

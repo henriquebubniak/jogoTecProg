@@ -73,7 +73,7 @@ void Menu::loop_eventos()
             textos[pos - 1].setOutlineThickness(1);
             textos[pos - 1].setOutlineColor(Color::Black);
         }
-        if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 1)
+        if (/*Keyboard::isKeyPressed(Keyboard::Enter) &&*/ pos == 1)
         {
             faseflor = new FaseFloresta(janela);
             faseflor->executa_fase();

@@ -4,6 +4,7 @@
 #include "Chefao.h"
 #include "Projetil.h"
 #include "Militar1.h"
+#include "Obstaculo.h"
 #include<list>
 
 using namespace std;
@@ -15,12 +16,13 @@ private:
 
     list<Entidade*>* entidades;
     list<Projetil*>* projeteis;
+    list<Obstaculo*>* obstaculos;
 
 
 public:
 
     //construtora e destrutora
-    GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL);
+    GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL, list<Obstaculo*>* plo = NULL);
     ~GerenciadorDeColisoes();
 
 
@@ -28,6 +30,7 @@ public:
     void testaColisoes ();
     void testaColisoesProjeteis();
     void testaColisoesEntidades ();
+    void testaColisoesObstaculos ();
 
     //sets
     void setListaEntidades (list<Entidade*>* ent);

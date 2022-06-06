@@ -55,6 +55,8 @@ public:
     void set_velocidade_y(float y);
     void set_pos_caixa (Vector2f pos);
     virtual void set_podepular (bool p);
+    virtual void set_slowpersonagem() {}
+    virtual void set_velmaxpersonagem() {}
 };
 
 

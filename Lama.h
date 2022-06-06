@@ -9,6 +9,7 @@ private:
 public:
     Lama();
     ~Lama();
+    void aplica_efeito(Entidade* ent);
 };
 
 

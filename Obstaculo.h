@@ -21,4 +21,5 @@ public:
     void move(){}
     void ataca(){}
     void dano(int d) {}
+    virtual void aplica_efeito(Entidade* ent) {}
 };

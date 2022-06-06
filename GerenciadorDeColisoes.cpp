@@ -2,10 +2,11 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp)
+GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo)
 {
     entidades = ple;
     projeteis = plp;
+    obstaculos = plo;
 }
 
 GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
@@ -24,6 +25,7 @@ void GerenciadorDeColisoes:: testaColisoes ()
     //Chama as funcoes de teste especificas
     testaColisoesProjeteis();
     testaColisoesEntidades();
+    testaColisoesObstaculos();
 }
 
 void GerenciadorDeColisoes:: testaColisoesProjeteis()
@@ -66,6 +68,31 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
         }
     }
 
+}
+
+void GerenciadorDeColisoes:: testaColisoesObstaculos ()
+{
+    list<Entidade*>::iterator ent;
+    list<Obstaculo*>::iterator obst;
+    if (obstaculos != NULL)
+    {
+        for (obst = obstaculos->begin(); obst != obstaculos->end(); obst++)
+        {
+            for (ent = entidades->begin(); ent != entidades->end(); ent++)
+            {
+                if((*obst)->get_GlobalBounds().intersects((*ent)->get_GlobalBounds()))
+                {
+                    (*obst)->aplica_efeito(*ent);
+                    break;
+                }
+                else 
+                {
+                    (*ent)->set_velmaxpersonagem();
+                }
+            }
+        }
+        
+    }
 }
 
 void GerenciadorDeColisoes:: testaColisoesEntidades ()

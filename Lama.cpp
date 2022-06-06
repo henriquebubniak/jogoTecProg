@@ -11,3 +11,10 @@ Lama::Lama():
 Lama::~Lama()
 {
 }
+
+
+void Lama::aplica_efeito(Entidade* ent)
+{
+    ent->set_slowpersonagem();
+    
+}

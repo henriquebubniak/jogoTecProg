@@ -2,10 +2,11 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp)
+GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo)
 {
     entidades = ple;
     projeteis = plp;
+    obstaculos = plo;
 }
 
 GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
@@ -30,6 +31,7 @@ void GerenciadorDeColisoes:: testaColisoes ()
      *
      */
     testaColisoesProjeteis();
+    testaColisoesObstaculos();
     testaColisoesEntidades();
 }
 
@@ -71,6 +73,37 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
             delete(*prev(proj_rm, 1));
         }
         //delete (*plista_rm.end());
+    }
+
+}
+
+void GerenciadorDeColisoes:: testaColisoesObstaculos()
+{
+    /** 1- Criar dois iteradores, um para a lista de entidades e outro para a lista de projeteis
+     *
+     *  2- Testar se houve colis�o
+     *
+     *  3- Em caso positivo, testar se a entidade � viva ou n�o (pode sofrer dano)
+     *
+     *  4- Caso o seja, aplicar o dano.
+     */
+
+    list<Entidade*>::iterator ent;
+    list<Obstaculo*>::iterator obst;
+    if (obstaculos != NULL)
+    {
+        for (obst = obstaculos->begin(); obst != obstaculos->end(); obst++)
+        {
+            for (ent = entidades->begin(); ent != entidades->end(); ent++)
+            {
+                if((*obst)->get_GlobalBounds().intersects((*ent)->get_GlobalBounds()))
+                {
+                    (*obst)->aplica_efeito(*ent);
+                }
+                else
+                    (*ent)->set_velmaxpersonagem();
+            }
+        }
     }
 
 }

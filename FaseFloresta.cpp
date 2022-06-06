@@ -11,7 +11,7 @@ plataforma(Vector2f(0.f, WINDOW_SIZEY-70), Vector2f(WINDOW_SIZEX, 70))
     lista_ent.push_back(static_cast<Entidade*>(&camarada));
     lista_ent.push_back(static_cast<Entidade*>(&chefao));
     lista_ent.push_back(static_cast<Entidade*>(&plataforma));
-    lista_ent.push_back(static_cast<Entidade*>(&lama1));
+    lista_obst.push_back(static_cast<Obstaculo*>(&lama1));
     camarada.setJanela(janela);
     chefao.setJanela(janela);
     plataforma.setJanela(janela);

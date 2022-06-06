@@ -1,3 +1,4 @@
+#pragma once
 #include "Obstaculo.h"
 
 class Lama: public Obstaculo
@@ -7,6 +8,7 @@ private:
 public:
     Lama();
     ~Lama();
+    void aplica_efeito(Entidade* ent);
 };
 
 

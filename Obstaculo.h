@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Entidade.h"
+#include <iostream>
 
 using namespace sf;
 
@@ -20,4 +21,5 @@ public:
     void move(){}
     void ataca(){}
     void dano(int d) {}
+    virtual void aplica_efeito(Entidade* ent) { }
 };

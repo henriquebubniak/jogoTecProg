@@ -51,7 +51,9 @@ public:
     void set_velocidade_x(float x){velocidade.x = x;}
     void set_velocidade_y(float y){velocidade.y = y;}
     void set_pos_caixa (Vector2f pos){caixa.setPosition(pos);}
-    virtual void set_podepular (bool p) {};
+    virtual void set_podepular (bool p) {}
+    virtual void set_slowpersonagem() {}
+    virtual void set_velmaxpersonagem() {}
 };
 
 

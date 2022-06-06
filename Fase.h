@@ -2,6 +2,7 @@
 #include <list>
 #include "Entidade.h"
 #include "Projetil.h"
+#include "Obstaculo.h"
 #include "GerenciadorDeColisoes.h"
 using namespace std;
 class Fase
@@ -10,6 +11,7 @@ protected:
 
     list<Entidade*> lista_ent;
     list<Projetil*> lista_proj;
+    list<Obstaculo*> lista_obst;
 
     RenderWindow* janela;
 

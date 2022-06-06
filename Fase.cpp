@@ -4,7 +4,7 @@
 
 Fase::Fase(RenderWindow* j):
 janela(j),
-gdc(&lista_ent, &lista_proj),
+gdc(&lista_ent, &lista_proj, &lista_obst),
 tempo(0)
 {
 
@@ -74,6 +74,10 @@ void Fase::imprime_ents()
             (*j)->imprime();
 
     for (list<Entidade*>::iterator i = lista_ent.begin(); i != lista_ent.end(); i++)
+    {
+        (*i)->imprime();
+    }
+    for (list<Obstaculo*>::iterator i = lista_obst.begin(); i != lista_obst.end(); i++)
     {
         (*i)->imprime();
     }

@@ -33,7 +33,7 @@ void Jogador::move()
         velocidade.x -= velocidade.x*0.1;
     if (Keyboard::isKeyPressed(Keyboard::Space) && pode_pular)
     {
-        velocidade.y = -7*vel;
+        velocidade.y = -10*vel;
     }
     if (velocidade.x > 2*vel)
         velocidade.x = 2*vel;

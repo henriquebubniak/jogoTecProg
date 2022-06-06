@@ -13,7 +13,7 @@ private:
 public:
 
     //Construtora e Destrutora
-    Militar1(Camarada* g = NULL);
+    Militar1(Camarada* g = NULL, Vector2f pos = Vector2f (WINDOW_SIZEX - 100, WINDOW_SIZEY - 200));
     ~Militar1();
 
     //Funcoes

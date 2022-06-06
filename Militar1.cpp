@@ -3,8 +3,8 @@
 
 
 /*=======================CONSTRUTORA E DESTRUTORA==============================*/
-Militar1::Militar1(Camarada* g):
-    Inimigo(Vector2f(WINDOW_SIZEX - 300.f, WINDOW_SIZEY - 300.f), Vector2f(50.f, 50.f), 10, 0.4, g)
+Militar1::Militar1(Camarada* g, Vector2f pos):
+    Inimigo(pos, Vector2f(50.f, 50.f), 10, 0.4, g)
 {
     caixa.setFillColor(Color::Blue);
     camarada = g;

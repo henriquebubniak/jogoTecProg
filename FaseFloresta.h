@@ -13,10 +13,11 @@ class FaseFloresta: public Fase
 private:
 
     Camarada camarada;
-    Chefao chefao;
-    Obstaculo plataforma;
-    Militar1 militar;
-    Lama lama1;
+    //Chefao chefao;
+    Obstaculo chao;
+    Obstaculo plataforma1;
+    //Militar1 militar;
+    //Lama lama1;
 
 
 public:
@@ -26,5 +27,7 @@ public:
     ~FaseFloresta();
 
     void inicializa ();
+
+    void geraInimigos1();
 };
 

@@ -19,7 +19,8 @@ protected:
     Vector2f dim;
     Vector2f velocidade;
 
-    RectangleShape caixa;
+    Sprite caixa;
+    Texture textura;
     RenderWindow* janela;
 
     Fase* pfase;
@@ -28,7 +29,7 @@ protected:
 public:
 
     //construtora e Destrutora
-    Entidade(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), Fase* f = NULL);
+    Entidade(Vector2f p = Vector2f(0.f, 0.f), const char* caminhoTextura = "imagens/padrao.png", Fase* f = NULL);
     virtual ~Entidade();
 
     //Fun��es
@@ -46,7 +47,7 @@ public:
     Vector2f get_velocidade ();
     FloatRect get_GlobalBounds();
     RenderWindow* get_janela ();
-    RectangleShape get_caixa ();
+    Sprite get_caixa ();
 
     //sets
     void set_fase(Fase* f);

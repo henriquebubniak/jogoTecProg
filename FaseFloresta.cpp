@@ -7,7 +7,7 @@ FaseFloresta::FaseFloresta(RenderWindow* j):
     camarada(),
     chefao(&camarada),
     militar(&camarada),
-    plataforma(Vector2f(0.f, WINDOW_SIZEY-70), Vector2f(WINDOW_SIZEX, 70))
+    plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/Plataforma.png")
 {
     inicializa ();
 }

@@ -16,7 +16,7 @@ private:
 public:
 
     //construtora e destrutora
-    Inimigo(Vector2f p, Vector2f tam_cx, int h, float v, Camarada* c);
+    Inimigo(Vector2f p,  const char* caminhoTextura = "imagens/padrao.png", int h = 0, float v = 0, Camarada* c = nullptr);
     ~Inimigo();
 
     //Funcoes

@@ -2,10 +2,10 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Obstaculo::Obstaculo(Vector2f pos, Vector2f dim):
-Entidade(pos, dim)
+Obstaculo::Obstaculo(Vector2f pos, const char* caminhoTextura):
+Entidade(pos, caminhoTextura)
 {
-    caixa.setFillColor(Color::Yellow);
+    //caixa.setFillColor(Color::Yellow);
 }
 
 Obstaculo::~Obstaculo()

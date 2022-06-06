@@ -4,9 +4,20 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Entidade::Entidade(Vector2f p, Vector2f tam_cx, Fase* f):
-pos(p), caixa(tam_cx), dim(tam_cx), pfase(f)
+Entidade::Entidade(Vector2f p, const char* caminhoTextura, Fase* f):
+pos(p), pfase(f)
 {
+    if (caminhoTextura){
+
+        if(!textura.loadFromFile(caminhoTextura))
+        {
+            cerr << "ERRO: Não foi possivel carregar a textura"<< endl;
+        }
+
+        caixa.setTexture(textura);
+    }
+
+
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);
 }
@@ -83,7 +94,7 @@ RenderWindow* Entidade:: get_janela (){
     return janela;
 }
 
-RectangleShape Entidade:: get_caixa (){
+Sprite Entidade:: get_caixa (){
 
     return caixa;
 }

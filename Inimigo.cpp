@@ -5,8 +5,8 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Inimigo::Inimigo(Vector2f p, Vector2f tam_cx, int h, float v, Camarada* c):
-Personagem(p, tam_cx, h, v),
+Inimigo::Inimigo(Vector2f p, const char* caminhoTextura, int h, float v, Camarada* c):
+Personagem(p, caminhoTextura, h, v),
 pode_atirar(true),
 auxt(0.f),
 tiros_tambor(6),
@@ -36,7 +36,7 @@ void Inimigo::ataca()
 
         if (velocidade.x >= 0)
         {
-            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), aux_tiro.x, aux_tiro.y);
+            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), "imagens/projetil.png", aux_tiro.x, aux_tiro.y);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);
@@ -44,7 +44,7 @@ void Inimigo::ataca()
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y), Vector2f(20.f, 10.f), aux_tiro.x, aux_tiro.y - (abs(cam->get_pos().x - caixa.getPosition().x)/WINDOW_SIZEX) );
+            Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x - 21, caixa.getPosition().y),"imagens/projetil.png", aux_tiro.x, aux_tiro.y - (abs(cam->get_pos().x - caixa.getPosition().x)/WINDOW_SIZEX) );
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);

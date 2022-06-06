@@ -3,12 +3,11 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Projetil::Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x, float vel_y):
+Projetil::Projetil(int f, Vector2f pos,  const char* caminhoTextura, float vel_x, float vel_y):
 forca(f),
-Entidade(pos, tam_cx)
+Entidade(pos, caminhoTextura)
 {
     velocidade = Vector2f(vel_x, vel_y);
-    caixa.setFillColor(Color::White);
 }
 
 Projetil::~Projetil()

@@ -3,8 +3,8 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Personagem::Personagem(Vector2f p, Vector2f tam_cx, int h, float v):
-    Entidade(p, tam_cx),
+Personagem::Personagem(Vector2f p, const char* caminhoTextura, int h, float v):
+    Entidade(p, caminhoTextura),
     tipo(1),
     hp(h),
     vel(v)

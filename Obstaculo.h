@@ -14,7 +14,7 @@ protected:
 public:
 
     //construtora e destrutora
-    Obstaculo(Vector2f pos, Vector2f dim);
+    Obstaculo(Vector2f pos, const char* caminhoTextura = "imagens/projetil.png");
     ~Obstaculo();
 
     //Fun��es

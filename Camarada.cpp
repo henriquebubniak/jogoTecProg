@@ -8,10 +8,10 @@ using namespace std;
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Camarada::Camarada():
-Jogador(Vector2f(0.f, WINDOW_SIZEY-200), Vector2f(40.f,80.f), 10, 1),
+Jogador(Vector2f(0.f, WINDOW_SIZEY-200), "imagens/Camarada.png", 10, 1),
 nvl_Camarada(10)
 {
-    caixa.setFillColor(Color::White);
+
 }
 
 Camarada::~Camarada(){}
@@ -21,7 +21,7 @@ Camarada::~Camarada(){}
 
 /*==============================GETS================================*/
 
-RectangleShape Camarada:: get_caixa(){
+Sprite Camarada:: get_caixa(){
 
     return caixa;
 }

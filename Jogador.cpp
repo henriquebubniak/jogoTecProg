@@ -3,8 +3,8 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Jogador::Jogador(Vector2f p, Vector2f tam_cx, int h, float v):
-    Personagem(p, tam_cx, h, v),
+Jogador::Jogador(Vector2f p, const char* caminhoTextura, int h, float v):
+    Personagem(p, caminhoTextura, h, v),
     pode_atirar(true),
     auxt(0),
     tiros_tambor(6)
@@ -56,7 +56,7 @@ void Jogador::ataca()
     {
         if (velocidade.x >= 0)
         {
-            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), Vector2f(10.f, 10.f), 20.f);
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x +  41, caixa.getPosition().y + 15), "imagens/projetil.png", 20.f);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);
@@ -64,7 +64,7 @@ void Jogador::ataca()
         else if (velocidade.x < 0)
         {
 
-            Projetil* proj = new Projetil(1, Vector2f(caixa.getPosition().x - dim.x - 1, caixa.getPosition().y), Vector2f(10.f, 10.f), -20.f);
+            Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - 1, caixa.getPosition().y + 15), "imagens/projetil.png", -20.f);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->setJanela(janela);

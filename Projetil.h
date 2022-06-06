@@ -11,7 +11,7 @@ private:
 public:
 
     //Construtora e destrutoras
-    Projetil(int f, Vector2f pos, Vector2f tam_cx, float vel_x, float vel_y = 0.0);
+    Projetil(int f, Vector2f pos, const char* caminhoTextura = "imagens/projetil.png", float vel_x = 0.f, float vel_y = 0.0);
     ~Projetil();
 
     //Fun��es

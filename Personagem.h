@@ -14,7 +14,7 @@ protected:
 public:
 
     //construtora e destrutora
-    Personagem(Vector2f p = Vector2f(0.f, 0.f), Vector2f tam_cx = Vector2f(100.f, 100.f), int h = 10, float v = 1);
+    Personagem(Vector2f p = Vector2f(0.f, 0.f),  const char* caminhoTextura = "imagens/padrao.png", int h = 10, float v = 1);
     virtual ~Personagem();
 
     //Funções

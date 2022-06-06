@@ -177,6 +177,62 @@ void GerenciadorDeColisoes:: testaColisoesEntidades ()
             }
         }
     }
+    /*list<Entidade*>::iterator i;
+    list<Entidade*>::iterator j;
+
+    for (i = entidades->begin(); i != entidades->end(); i++)
+    {
+        for (j = next(i, 1); j != entidades->end(); j++)
+        {
+            FloatRect posJog;
+            posJog = (*i)->get_GlobalBounds();
+            Vector2f centroJog = Vector2f(posJog.left + posJog.width, posJog.top + posJog.height);
+
+            FloatRect posObst;
+            posObst = (*j)->get_GlobalBounds();
+            Vector2f centroObst = Vector2f(posObst.left + posObst.width, posObst.top + posObst.height);
+
+            Vector2f delta = Vector2f(centroJog.x - centroObst.x, centroJog.y - centroObst.y);
+
+            if (abs(delta.x) < (posJog.width/2.0) + (posObst.width/2.0) && abs(delta.y) < (posJog.height/2.0) + (posObst.height/2.0))
+            {
+                if(delta.x < 0)
+                {
+                    if (delta.y < 0)
+                    {
+                        if (posJog.left + posJog.width - posObst.left < posJog.top - posObst.top + posObst.height)//a esquerda
+                        {
+                            (*i)->move_caixa(Vector2f(-1*(posJog.left + posJog.width - posObst.left), 0));
+                        }
+                        if (posJog.left + posJog.width - posObst.left > posJog.top - posObst.top + posObst.height)//abaixo
+                        {
+                            (*i)->move_caixa(Vector2f(0 , -1*(posJog.top - posObst.top + posObst.height)));
+
+                        }
+                    }
+                    else
+                    {
+                        if (posJog.left + posJog.width - posObst.left < posObst.top - (posJog.top + posJog.height))//a esquerda
+                        {
+                            (*i)->move_caixa(Vector2f(-1*(posJog.left + posJog.width - posObst.left), 0));
+                        }
+                        if (posJog.left + posJog.width - posObst.left > posObst.top - (posJog.top + posJog.height))//acima
+                        {
+                            (*i)->move_caixa(Vector2f(0 , (posObst.top - (posJog.top + posJog.height))));
+                        }
+                    }
+                }
+                else 
+                {
+
+                }
+
+            }
+        }
+
+    }*/
+    
+}
 
 
 /*===================================================================*/
@@ -184,7 +240,6 @@ void GerenciadorDeColisoes:: testaColisoesEntidades ()
 
 /*===============================SETS===============================*/
 
-}
 
 void GerenciadorDeColisoes:: setListaEntidades(list<Entidade*>* ent)
 {

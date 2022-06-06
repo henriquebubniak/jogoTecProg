@@ -19,7 +19,8 @@ protected:
     Vector2f dim;
     Vector2f velocidade;
 
-    RectangleShape caixa;
+    Sprite caixa;
+    Texture imagem;
     RenderWindow* janela;
 
     Fase* pfase;
@@ -46,7 +47,7 @@ public:
     Vector2f get_velocidade ();
     FloatRect get_GlobalBounds();
     RenderWindow* get_janela ();
-    RectangleShape get_caixa ();
+    Sprite get_caixa ();
 
     //sets
     //void set_fase(Fase* f) { pfase = f; }
@@ -60,6 +61,7 @@ public:
     void set_velocidade_x(float x);
     void set_velocidade_y(float y);
     void set_pos_caixa (Vector2f pos);
+    void move_caixa(Vector2f d);
     virtual void set_podepular (bool p);
 };
 

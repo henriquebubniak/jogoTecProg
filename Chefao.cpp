@@ -6,7 +6,7 @@
 Chefao::Chefao(Camarada* g):
     Inimigo(Vector2f(WINDOW_SIZEX - 200.f, WINDOW_SIZEY - 400.f), Vector2f(200.f, 200.f), 100, 0.3, g)
 {
-    caixa.setFillColor(Color::Red);
+    caixa.setColor(Color::Red);
     camarada = g;
 }
 

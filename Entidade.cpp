@@ -5,10 +5,12 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Entidade::Entidade(Vector2f p, Vector2f tam_cx, Fase* f):
-pos(p), caixa(tam_cx), dim(tam_cx), pfase(f)
+pos(p), caixa(), dim(tam_cx), pfase(f)
 {
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);
+    caixa.setTexture(imagem);
+    //caixa.Resize(tam_cx.x, tam_cx.y);
 }
 
 
@@ -83,7 +85,7 @@ RenderWindow* Entidade:: get_janela (){
     return janela;
 }
 
-RectangleShape Entidade:: get_caixa (){
+Sprite Entidade:: get_caixa (){
 
     return caixa;
 }
@@ -91,3 +93,7 @@ RectangleShape Entidade:: get_caixa (){
 /*===================================================================*/
 
 
+void Entidade::move_caixa(Vector2f d)
+{
+    caixa.move(d);
+}

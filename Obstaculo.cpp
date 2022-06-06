@@ -5,7 +5,7 @@
 Obstaculo::Obstaculo(Vector2f pos, Vector2f dim):
 Entidade(pos, dim)
 {
-    caixa.setFillColor(Color::Yellow);
+    caixa.setColor(Color::Yellow);
 }
 
 Obstaculo::~Obstaculo()

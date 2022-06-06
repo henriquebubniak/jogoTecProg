@@ -8,7 +8,7 @@ forca(f),
 Entidade(pos, tam_cx)
 {
     velocidade = Vector2f(vel_x, vel_y);
-    caixa.setFillColor(Color::White);
+    caixa.setColor(Color::White);
 }
 
 Projetil::~Projetil()

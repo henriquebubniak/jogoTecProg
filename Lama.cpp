@@ -7,7 +7,7 @@ Lama::Lama():
     srand(time(NULL));
     int rand_x = rand()%(WINDOW_SIZEX-100);
     caixa.setPosition(Vector2f(rand_x, WINDOW_SIZEY-75));
-    caixa.setFillColor(Color::Magenta);
+    caixa.setColor(Color::Magenta);
 }
 
 Lama::~Lama()

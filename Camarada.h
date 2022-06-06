@@ -17,6 +17,5 @@ public:
     ~Camarada();
 
     //Fun��es
-    RectangleShape get_caixa();
     const Vector2f get_pos();
 };

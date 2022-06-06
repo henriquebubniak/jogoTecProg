@@ -4,7 +4,7 @@
 
 Fase::Fase(RenderWindow* j):
     janela(j),
-    gdc(&lista_ent, &lista_proj),gg(&lista_ent, &lista_proj, janela),
+    gdc(&lista_ent, &lista_proj, &lista_obst),gg(&lista_ent, &lista_proj, &lista_obst, janela),
     tempo(0)
 {
 

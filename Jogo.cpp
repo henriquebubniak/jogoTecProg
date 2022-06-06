@@ -14,7 +14,7 @@ Jogo::Jogo(/* args */):
     janela.setFramerateLimit(120);
 
     menu.executa_menu();
-    floresta.executa_fase();
+    //floresta.executa_fase();
 }
 
 Jogo::~Jogo()

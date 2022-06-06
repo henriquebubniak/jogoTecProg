@@ -3,10 +3,11 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorGrafico:: GerenciadorGrafico(list<Entidade*>* ple, list<Projetil*>* plp, RenderWindow* j)
+GerenciadorGrafico:: GerenciadorGrafico(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo, RenderWindow* j)
 {
     entidades = ple;
     projeteis = plp;
+    obstaculos = plo;
     janela = j;
 }
 
@@ -29,6 +30,7 @@ void GerenciadorGrafico:: imprimeEntes()
 
      imprimeProjeteis();
      imprimeEntidades();
+     imprimeObstaculos();
 
 }
 
@@ -53,6 +55,22 @@ void GerenciadorGrafico:: imprimeProjeteis()
         }
     }
 
+}
+
+
+void GerenciadorGrafico:: imprimeObstaculos()
+{
+    list<Obstaculo*>::iterator obst;
+
+    if (obstaculos != NULL)
+    {
+
+        for (obst = obstaculos->begin(); obst != obstaculos->end(); obst++)
+        {
+
+            janela->draw((*obst)->get_caixa());
+        }
+    }
 }
 
 void GerenciadorGrafico:: imprimeEntidades()
@@ -100,6 +118,11 @@ void GerenciadorGrafico:: setListaEntidades (list<Entidade*>* ent)
 void GerenciadorGrafico:: setListaProjeteis (list<Projetil*>* proj)
 {
     projeteis = proj;
+}
+
+void GerenciadorGrafico:: setListaObstaculos (list<Obstaculo*>* obst)
+{
+    obstaculos = obst;
 }
 
 void GerenciadorGrafico:: setJanela (RenderWindow* j)

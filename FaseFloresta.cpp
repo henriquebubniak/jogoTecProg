@@ -27,7 +27,7 @@ void FaseFloresta:: inicializa ()
     lista_ent.push_back(static_cast<Entidade*>(&camarada));
     lista_ent.push_back(static_cast<Entidade*>(&chefao));
     lista_ent.push_back(static_cast<Entidade*>(&militar));
-    lista_ent.push_back(static_cast<Entidade*>(&lama1));
+    lista_obst.push_back(&lama1);
     lista_ent.push_back(static_cast<Entidade*>(&plataforma));
 
 

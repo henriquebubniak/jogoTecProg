@@ -6,7 +6,7 @@
 
 class Inimigo: public Personagem
 {
-private:
+protected:
 
     bool pode_atirar;
     float auxt;
@@ -20,5 +20,5 @@ public:
     ~Inimigo();
 
     //Funcoes
-    void ataca();
+    virtual void ataca();
 };

@@ -5,6 +5,7 @@
 #include "Camarada.h"
 #include "Obstaculo.h"
 #include "Lama.h"
+#include "Mina.h"
 #include "Militar1.h"
 
 class FaseFloresta: public Fase
@@ -17,6 +18,7 @@ private:
     Obstaculo plataforma;
     Militar1 militar;
     Lama lama1;
+    Mina mina1;
 
 
 public:

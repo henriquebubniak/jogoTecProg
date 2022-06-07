@@ -19,7 +19,7 @@ protected:
 public:
 
     //construtora e destrutora
-    Jogador(Vector2f p = Vector2f(0.f, 0.f),const char* caminhoTextura = "/imagens/padrao.png", int h = 10, float v = 1);
+    Jogador(Vector2f p = Vector2f(0.f, 0.f),const char* caminhoTextura = "/imagens/padrao.png", int h = 30, float v = 1);
     ~Jogador();
 
     //Fun��es

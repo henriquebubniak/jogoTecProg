@@ -74,6 +74,10 @@ void GerenciadorDeColisoes:: testaColisoesObstaculos ()
 {
     list<Entidade*>::iterator ent;
     list<Obstaculo*>::iterator obst;
+
+    list<Obstaculo*> lista_rm;
+    list<Obstaculo*>::iterator obst_rm;
+
     if (obstaculos != NULL)
     {
         for (obst = obstaculos->begin(); obst != obstaculos->end(); obst++)
@@ -83,15 +87,30 @@ void GerenciadorDeColisoes:: testaColisoesObstaculos ()
                 if((*obst)->get_GlobalBounds().intersects((*ent)->get_GlobalBounds()))
                 {
                     (*obst)->aplica_efeito(*ent);
+
+                    if(!((*obst)->get_tipo())){
+
+                            lista_rm.push_back((*obst));
+                    }
+
                     break;
                 }
-                else 
+                else
                 {
                     (*ent)->set_velmaxpersonagem();
                 }
             }
         }
-        
+
+        obst_rm = lista_rm.begin();
+
+        while(obst_rm != lista_rm.end()){
+
+            obstaculos->remove(*obst_rm);
+            obst_rm++;
+            //delete(*prev(obst_rm, 1));
+        }
+
     }
 }
 

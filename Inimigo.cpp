@@ -24,7 +24,7 @@ Inimigo::~Inimigo()
 
 void Inimigo::ataca()
 {
-    Vector2f aux_tiro = Vector2f(cam->get_pos().x - caixa.getPosition().x, cam->get_pos().y + (cam->get_dim().y/2) - caixa.getPosition().y);
+    Vector2f aux_tiro = Vector2f(cam->get_pos().x - caixa.getPosition().x, cam->get_pos().y + 30 - caixa.getPosition().y);
     float mod = sqrt(aux_tiro.x*aux_tiro.x + aux_tiro.y*aux_tiro.y);
     cout << aux_tiro.x << ", "  << aux_tiro.y << endl;
     cout << mod << endl;

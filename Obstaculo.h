@@ -10,11 +10,12 @@ class Obstaculo: public Entidade
 
 protected:
 
+    bool tipo;
 
 public:
 
     //construtora e destrutora
-    Obstaculo(Vector2f pos, const char* caminhoTextura = "imagens/projetil.png");
+    Obstaculo(Vector2f pos, const char* caminhoTextura = "imagens/padrao.png", bool tipo = true);
     ~Obstaculo();
 
     //Fun��es
@@ -22,4 +23,12 @@ public:
     void ataca(){}
     void dano(int d) {}
     virtual void aplica_efeito(Entidade* ent) {}
+
+    ////////////
+    //Tipos: Perene-> Nao eh deletado apos colidir; Temporario-> morre apos colidir
+    // Perene: True
+    // Temporario: False
+    //
+    ///////////
+    bool get_tipo ();
 };

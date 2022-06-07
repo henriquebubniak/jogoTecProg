@@ -19,6 +19,7 @@ private:
 
     Menu menu;
     RenderWindow janela;
+    GerenciadorGrafico gg;
     FaseFloresta floresta;
     static float gravidade;
 

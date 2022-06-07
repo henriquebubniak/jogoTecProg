@@ -2,8 +2,8 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-FaseFloresta::FaseFloresta(RenderWindow* j):
-    Fase(j),
+FaseFloresta::FaseFloresta(RenderWindow* j, GerenciadorGrafico* pgg):
+    Fase(j, pgg),
     camarada(),
     chefao(&camarada),
     militar(&camarada),

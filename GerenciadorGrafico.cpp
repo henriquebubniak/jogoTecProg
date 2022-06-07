@@ -1,13 +1,15 @@
 #include "GerenciadorGrafico.h"
+#include "FaseFloresta.h"
+
 
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorGrafico:: GerenciadorGrafico(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo, RenderWindow* j)
+GerenciadorGrafico:: GerenciadorGrafico( RenderWindow* j)
 {
-    entidades = ple;
-    projeteis = plp;
-    obstaculos = plo;
+    entidades = NULL;
+    projeteis = NULL;
+    obstaculos = NULL;
     janela = j;
 }
 
@@ -127,5 +129,14 @@ void GerenciadorGrafico:: setJanela (RenderWindow* j)
 void GerenciadorGrafico:: setListaObstaculos (list<Obstaculo*>* obst)
  {
      obstaculos = obst;
+ }
+
+ 
+
+ void GerenciadorGrafico:: inicializa(list<Entidade*>* ple, list<Obstaculo*>* plo, list<Projetil*>* plp)
+ {
+     entidades = ple;
+     obstaculos = plo;
+     projeteis = plp;
  }
 /*===================================================================*/

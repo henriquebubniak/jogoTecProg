@@ -4,8 +4,9 @@ bool bfloresta (Vector2f v, Vector2i i);
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Menu::Menu(RenderWindow* j):
-janela(j)
+Menu::Menu(RenderWindow* j, GerenciadorGrafico* pgg):
+janela(j),
+pGerenciadorGrafico(pgg)
 {
     set_valores();
 }
@@ -75,7 +76,8 @@ void Menu::loop_eventos()
         }
         if (/*Keyboard::isKeyPressed(Keyboard::Enter) &&*/ pos == 1)
         {
-            faseflor = new FaseFloresta(janela);
+            faseflor = new FaseFloresta(janela, pGerenciadorGrafico);
+            pGerenciadorGrafico->inicializa(faseflor->get_lista_ent(), faseflor->get_lista_obst(), faseflor->get_lista_proj());
             faseflor->executa_fase();
         }
         imprime();

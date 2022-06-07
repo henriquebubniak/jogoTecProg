@@ -9,7 +9,7 @@
 #include<list>
 
 using namespace std;
-
+class FaseFloresta;
 class GerenciadorGrafico{
 
 private:
@@ -23,7 +23,7 @@ private:
 public:
 
     //construtora e destrutora
-    GerenciadorGrafico(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL, list<Obstaculo*>* plo = NULL, RenderWindow* j = NULL);
+    GerenciadorGrafico(RenderWindow* j = NULL);
     ~GerenciadorGrafico();
 
     //Draw
@@ -38,6 +38,7 @@ public:
     void setListaProjeteis(list<Projetil*>* proj);
     void setListaObstaculos(list<Obstaculo*>* obst);
     void setJanela (RenderWindow* j);
+    void inicializa(list<Entidade*>* ple, list<Obstaculo*>* plo, list<Projetil*>* plp);
 
 
 

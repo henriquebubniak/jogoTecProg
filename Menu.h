@@ -1,7 +1,6 @@
 #pragma once
 
 #include "FaseFloresta.h"
-
 class Menu
 {
 private:
@@ -11,6 +10,7 @@ private:
     bool enter;
 
     RenderWindow* janela;
+    GerenciadorGrafico* pGerenciadorGrafico;
     Font fonte;
     Texture imagem;
     Sprite bg;
@@ -24,7 +24,7 @@ private:
 public:
 
     //construtora e destrutora
-    Menu(RenderWindow* j);
+    Menu(RenderWindow* j, GerenciadorGrafico* pgg);
     ~Menu();
 
     //metodos

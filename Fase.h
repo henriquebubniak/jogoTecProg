@@ -20,14 +20,13 @@ protected:
     RenderWindow* janela;
 
     GerenciadorDeColisoes gdc;
-    GerenciadorGrafico gg;
-
+    GerenciadorGrafico* pGerenciadorGrafico;
     float tempo;
 
 public:
 
     //Construtora e Destrutora
-    Fase(RenderWindow* j = NULL);
+    Fase(RenderWindow* j = NULL, GerenciadorGrafico* pgg = NULL);
     ~Fase();
 
     //Fun��es
@@ -46,6 +45,10 @@ public:
 
     //get
     float get_tempo();
+    list<Entidade*>* get_lista_ent();
+    list<Projetil*>* get_lista_proj();
+    list<Obstaculo*>* get_lista_obst();
+
 
 };
 

@@ -2,9 +2,10 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Fase::Fase(RenderWindow* j):
+Fase::Fase(RenderWindow* j, GerenciadorGrafico* pgg):
     janela(j),
-    gdc(&lista_ent, &lista_proj, &lista_obst), gg(&lista_ent, &lista_proj, &lista_obst, janela),
+    pGerenciadorGrafico(pgg),
+    gdc(&lista_ent, &lista_proj, &lista_obst),
     tempo(0)
 {
 
@@ -24,7 +25,7 @@ void Fase::atualiza()
     move_ents();
     ataca_ents();
     gdc.testaColisoes();
-    gg.atualizaJanela();
+    pGerenciadorGrafico->atualizaJanela();
     tempo += 8.333;
 }
 /*==================ATACA ENTES=========================*/
@@ -105,3 +106,18 @@ float Fase:: get_tempo (){
 
     return tempo;
 }
+
+list<Entidade*>* Fase::get_lista_ent()
+{
+    return &lista_ent;
+}
+
+list<Projetil*>* Fase:: get_lista_proj ()
+{
+    return &lista_proj;
+}
+list<Obstaculo*>* Fase:: get_lista_obst ()
+{
+    return &lista_obst;
+}
+

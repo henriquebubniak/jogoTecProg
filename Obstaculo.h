@@ -11,11 +11,12 @@ class Obstaculo: public Entidade
 protected:
 
     bool tipo;
+    vector<Vector2f> posicoes_padrao;
 
 public:
 
     //construtora e destrutora
-    Obstaculo(Vector2f pos, const char* caminhoTextura = "imagens/padrao.png", bool tipo = true);
+    Obstaculo(Vector2f pos, const char* caminhoTextura = "imagens/padrao.png", bool t = true);
     ~Obstaculo();
 
     //Fun��es

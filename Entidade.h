@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <list>
 
 #define WINDOW_SIZEX 3000

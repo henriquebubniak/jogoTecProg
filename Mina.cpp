@@ -5,8 +5,8 @@ Mina::Mina(int d):
 {
     srand(time(NULL));
     int rand_x = rand()% (WINDOW_SIZEX-100);
-    caixa.setPosition(Vector2f(rand_x, WINDOW_SIZEY-75));
-
+    caixa.setPosition(posicoes_padrao[1]);
+    cout << posicoes_padrao[0].x << ", " << posicoes_padrao[0].y << endl;
     dano = d;
 
 }

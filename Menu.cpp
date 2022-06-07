@@ -74,7 +74,7 @@ void Menu::loop_eventos()
             textos[pos - 1].setOutlineThickness(1);
             textos[pos - 1].setOutlineColor(Color::Black);
         }
-        if (/*Keyboard::isKeyPressed(Keyboard::Enter) &&*/ pos == 1)
+        if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 1)
         {
             faseflor = new FaseFloresta(janela, pGerenciadorGrafico);
             pGerenciadorGrafico->inicializa(faseflor->get_lista_ent(), faseflor->get_lista_obst(), faseflor->get_lista_proj());

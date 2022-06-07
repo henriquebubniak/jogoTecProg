@@ -27,7 +27,6 @@ void Militar2::move()
         velocidade.x = -vel*2;
     caixa.move(velocidade);
     velocidade.y += Jogo::get_g() * 0.016;
-    cout << "MILITAR@ VIVO" << endl;
 }
 
 void Militar2:: ataca()

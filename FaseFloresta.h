@@ -26,7 +26,7 @@ private:
 public:
 
     //construtora e destrutora
-    FaseFloresta(RenderWindow* j = NULL, GerenciadorGrafico* pgg = NULL);
+    FaseFloresta(GerenciadorGrafico* pgg = NULL);
     ~FaseFloresta();
 
     void inicializa ();

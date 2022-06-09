@@ -59,7 +59,7 @@ void Jogador::ataca()
             Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x +  41, caixa.getPosition().y + 15), "imagens/projetild.png", 20.f);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
-            proj->setJanela(janela);
+            proj->set_pGG(pGerenciadorGrafico);
         }
         else if (velocidade.x < 0)
         {
@@ -67,7 +67,7 @@ void Jogador::ataca()
             Projetil* proj = new Projetil(7, Vector2f(caixa.getPosition().x - 41, caixa.getPosition().y + 15), "imagens/projetile.png", -20.f);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
-            proj->setJanela(janela);
+            proj->set_pGG(pGerenciadorGrafico);
         }
         pode_atirar = false;
         auxt = pfase->get_tempo();

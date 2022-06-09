@@ -17,8 +17,6 @@ protected:
     list<Projetil*> lista_proj;
     list<Obstaculo*> lista_obst;
 
-    RenderWindow* janela;
-
     GerenciadorDeColisoes gdc;
     GerenciadorGrafico* pGerenciadorGrafico;
     float tempo;
@@ -26,7 +24,7 @@ protected:
 public:
 
     //Construtora e Destrutora
-    Fase(RenderWindow* j = NULL, GerenciadorGrafico* pgg = NULL);
+    Fase(GerenciadorGrafico* pgg = NULL);
     ~Fase();
 
     //Fun��es

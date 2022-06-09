@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FaseFloresta.h"
+class Jogo;
 class Menu
 {
 private:
@@ -9,12 +10,11 @@ private:
     bool clicou;
     bool enter;
 
-    RenderWindow* janela;
     GerenciadorGrafico* pGerenciadorGrafico;
     Font fonte;
-    Texture imagem;
-    Sprite bg;
+    Ente planoDeFundo;
     Vector2f pos_mouse;
+    Jogo* jogo;
 
     std::vector<string> nomes_botoes;
     std::vector<Vector2f> pos_botoes;
@@ -24,7 +24,7 @@ private:
 public:
 
     //construtora e destrutora
-    Menu(RenderWindow* j, GerenciadorGrafico* pgg);
+    Menu(GerenciadorGrafico* pgg);
     ~Menu();
 
     //metodos

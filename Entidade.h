@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include "Ente.h"
 #include <iostream>
 #include <list>
 
@@ -12,17 +12,13 @@ using namespace sf;
 
 class Fase;
 
-class Entidade
+class Entidade: public Ente
 {
 protected:
 
     Vector2f pos;
     Vector2f dim;
     Vector2f velocidade;
-
-    Sprite caixa;
-    Texture textura;
-    RenderWindow* janela;
 
     Fase* pfase;
 
@@ -34,7 +30,6 @@ public:
     virtual ~Entidade();
 
     //Fun��es
-    void setJanela(RenderWindow* j = NULL);
 
     //virtuais puras
     virtual void move() = 0;
@@ -47,8 +42,7 @@ public:
     Vector2f get_pos();
     Vector2f get_velocidade ();
     FloatRect get_GlobalBounds();
-    RenderWindow* get_janela ();
-    Sprite get_caixa ();
+    
 
     //sets
     void set_fase(Fase* f);

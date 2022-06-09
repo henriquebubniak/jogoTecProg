@@ -1,44 +1,46 @@
 #pragma once
 
-#include "Camarada.h"
-#include "Chefao.h"
-#include "Projetil.h"
-#include "Militar1.h"
-#include "Obstaculo.h"
+#include "Ente.h"
+
 
 #include<list>
 
 using namespace std;
-class FaseFloresta;
+class Entidade;
+class Obstaculo;
+class Projetil;
 class GerenciadorGrafico{
 
 private:
 
-    list<Entidade*>* entidades;
-    list<Projetil*>* projeteis;
-    list<Obstaculo*>* obstaculos;
+    list<Ente*> entes;
+    std::vector<Text> textos;
 
-    RenderWindow* janela;
+    RenderWindow janela;
 
 public:
 
     //construtora e destrutora
-    GerenciadorGrafico(RenderWindow* j = NULL);
+    GerenciadorGrafico();
     ~GerenciadorGrafico();
 
     //Draw
     void imprimeEntes();
-    void imprimeProjeteis();
-    void imprimeEntidades();
-    void imprimeObstaculos();
+    void imprimeTextos();
     void atualizaJanela();
 
     //sets
-    void setListaEntidades (list<Entidade*>* ent);
-    void setListaProjeteis(list<Projetil*>* proj);
-    void setListaObstaculos(list<Obstaculo*>* obst);
-    void setJanela (RenderWindow* j);
-    void inicializa(list<Entidade*>* ple, list<Obstaculo*>* plo, list<Projetil*>* plp);
+    void incluiEnte(Ente* ente);
+    void incluiEnte(list<Entidade*>* ple);
+    void incluiEnte(list<Projetil*>* plp);
+    void incluiEnte(list<Obstaculo*>* plo);
+    void incluiTexto(std::vector<Text>* t);
+    void removeEnte();
+    void removeTodosEntes();    
+
+    bool get_JanelaAberta();
+    bool pega_evento(Event* ev);
+    void fecha_janela();
 
 
 

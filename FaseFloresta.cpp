@@ -2,8 +2,8 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-FaseFloresta::FaseFloresta(RenderWindow* j, GerenciadorGrafico* pgg):
-    Fase(j, pgg),
+FaseFloresta::FaseFloresta(GerenciadorGrafico* pgg):
+    Fase(pgg),
     camarada(),
     chefao(&camarada),
     militar1(&camarada),
@@ -33,15 +33,17 @@ void FaseFloresta:: inicializa ()
     lista_obst.push_back(&lama1);
     lista_ent.push_back(static_cast<Entidade*>(&plataforma));
     lista_obst.push_back(&mina1);
+    pGerenciadorGrafico->incluiEnte(&lista_ent);
+    pGerenciadorGrafico->incluiEnte(&lista_proj);
+    pGerenciadorGrafico->incluiEnte(&lista_obst);
 
-
-    camarada.setJanela(janela);
-    chefao.setJanela(janela);
-    militar1.setJanela(janela);
-    militar2.setJanela(janela);
-    plataforma.setJanela(janela);
-    lama1.setJanela(janela);
-    mina1.setJanela(janela);
+    camarada.set_pGG(pGerenciadorGrafico);
+    chefao.set_pGG(pGerenciadorGrafico);
+    militar1.set_pGG(pGerenciadorGrafico);
+    militar2.set_pGG(pGerenciadorGrafico);
+    lama1.set_pGG(pGerenciadorGrafico);
+    plataforma.set_pGG(pGerenciadorGrafico);
+    mina1.set_pGG(pGerenciadorGrafico);
 
 
     camarada.set_fase(static_cast<Fase*>(this));

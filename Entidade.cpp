@@ -5,19 +5,9 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Entidade::Entidade(Vector2f p, const char* caminhoTextura, Fase* f):
-pos(p), pfase(f)
+Ente(caminhoTextura), pos(p), pfase(f)
 {
-    if (caminhoTextura){
-
-        if(!textura.loadFromFile(caminhoTextura))
-        {
-            cerr << "ERRO: Nao foi possivel carregar a textura"<< endl;
-        }
-
-        caixa.setTexture(textura);
-    }
-
-
+    
     velocidade = Vector2f(0.f, 0.f);
     caixa.setPosition(pos);
 }
@@ -25,20 +15,13 @@ pos(p), pfase(f)
 
 Entidade::~Entidade()
 {
-
-    janela = nullptr;
     pfase = nullptr;
-
 }
 
 /*===================================================================*/
 
 /*==================SETS=========================*/
 
-void Entidade:: setJanela (RenderWindow* j){
-
-    janela = j;
-}
 
 void Entidade:: set_fase(Fase* f){
 
@@ -89,15 +72,8 @@ FloatRect Entidade:: get_GlobalBounds (){
     return caixa.getGlobalBounds();
 }
 
-RenderWindow* Entidade:: get_janela (){
 
-    return janela;
-}
 
-Sprite Entidade:: get_caixa (){
-
-    return caixa;
-}
 
 /*===================================================================*/
 

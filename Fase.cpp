@@ -2,8 +2,7 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Fase::Fase(RenderWindow* j, GerenciadorGrafico* pgg):
-    janela(j),
+Fase::Fase(GerenciadorGrafico* pgg):
     pGerenciadorGrafico(pgg),
     gdc(&lista_ent, &lista_proj, &lista_obst),
     tempo(0)
@@ -87,12 +86,12 @@ void Fase::rm_ent(Entidade* e)
 
 void Fase::executa_fase()
 {
-    while (janela->isOpen())
+    while (pGerenciadorGrafico->get_JanelaAberta())
     {
         Event event;
-        while (janela->pollEvent(event))
+        while (pGerenciadorGrafico->pega_evento(&event))
             if (event.type == Event::Closed)
-                janela->close();
+                pGerenciadorGrafico->fecha_janela();
 
         atualiza();
     }

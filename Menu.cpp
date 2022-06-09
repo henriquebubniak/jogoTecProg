@@ -1,14 +1,18 @@
 #include "Menu.h"
+#include "Jogo.h"
 
-bool bfloresta (Vector2f v, Vector2i i);
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Menu::Menu(RenderWindow* j, GerenciadorGrafico* pgg):
-janela(j),
-pGerenciadorGrafico(pgg)
+Menu::Menu(GerenciadorGrafico* pgg):
+pGerenciadorGrafico(pgg),
+planoDeFundo("./imagens/menu.png")
 {
     set_valores();
+    planoDeFundo.set_pGG(pgg);
+    pGerenciadorGrafico->removeTodosEntes();
+    pGerenciadorGrafico->incluiEnte(&planoDeFundo);
+    pGerenciadorGrafico->incluiTexto(&textos);
 }
 
 Menu::~Menu()
@@ -24,8 +28,6 @@ void Menu::set_valores()
     clicou = false;
     enter = false;
     fonte.loadFromFile("./fontes/Wargate-Normal.otf");
-    imagem.loadFromFile("./imagens/menu.png");
-    bg.setTexture(imagem);
     pos_mouse = Vector2f(0, 0);
     nomes_botoes.push_back("GREGVENTURES");
     nomes_botoes.push_back("FLORESTA");
@@ -53,19 +55,12 @@ void Menu::loop_eventos()
 {
     Vector2i pos_mouse_aux;
     FaseFloresta* faseflor = NULL;
-    pos_mouse_aux = Mouse::getPosition();
-    pos_mouse = janela->mapPixelToCoords(pos_mouse_aux);
-    FloatRect botao_floresta;
-    botao_floresta.left = 894.f;
-    botao_floresta.top = 244.f;
-    botao_floresta.width = 292.f;
-    botao_floresta.height = 92.f;
-    while (janela->isOpen())
+    while (pGerenciadorGrafico->get_JanelaAberta())
     {
         Event event;
-        while (janela->pollEvent(event))
+        while (pGerenciadorGrafico->pega_evento(&event))
             if (event.type == Event::Closed)
-                janela->close();
+                pGerenciadorGrafico->fecha_janela();
         if (Keyboard::isKeyPressed(Keyboard::Down))
         {
             pos++;
@@ -76,9 +71,7 @@ void Menu::loop_eventos()
         }
         if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 1)
         {
-            faseflor = new FaseFloresta(janela, pGerenciadorGrafico);
-            pGerenciadorGrafico->inicializa(faseflor->get_lista_ent(), faseflor->get_lista_obst(), faseflor->get_lista_proj());
-            faseflor->executa_fase();
+            jogo->executa_fase_floresta();
         }
         imprime();
     }
@@ -90,11 +83,7 @@ void Menu::loop_eventos()
 
 void Menu::imprime()
 {
-    janela->clear();
-    janela->draw(bg);
-    for (int i = 0; i < textos.size(); i++)
-        janela->draw(textos[i]);
-    janela->display();
+    pGerenciadorGrafico->atualizaJanela();
 }
 
 /*===================================================================*/
@@ -106,19 +95,3 @@ void Menu::executa_menu()
     loop_eventos();
 }
 
-bool bfloresta (Vector2f v, Vector2i i)
-{
-    v = Vector2f(0.f, 0.f);
-    cout << v.x << ", " << v.y << endl;
-    cout << i.x << ", " << i.y << endl;
-    /*if (v.x > 894 && v.y > 664 && v.x < 1186 && v.y < 756)
-    {
-        cout << "true" << endl;*/
-        return false;
-    /*}
-    else
-    {
-        cout << "false" << endl;
-        return false;
-    }*/
-}

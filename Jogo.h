@@ -18,7 +18,6 @@ class Jogo
 private:
 
     Menu menu;
-    RenderWindow janela;
     GerenciadorGrafico gg;
     FaseFloresta floresta;
     static float gravidade;
@@ -28,6 +27,8 @@ public:
     //construtora e destrutora
     Jogo(/* args */);
     ~Jogo();
+
+    void executa_fase_floresta();
 
     //Funcoes
     static float get_g();

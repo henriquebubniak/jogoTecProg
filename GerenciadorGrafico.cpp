@@ -1,16 +1,18 @@
 #include "GerenciadorGrafico.h"
-#include "FaseFloresta.h"
+#include "Entidade.h"
+#include "Projetil.h"
+#include "Obstaculo.h"
 
 
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorGrafico:: GerenciadorGrafico( RenderWindow* j)
+GerenciadorGrafico:: GerenciadorGrafico():
+    janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG")
 {
-    entidades = NULL;
-    projeteis = NULL;
-    obstaculos = NULL;
-    janela = j;
+
+    janela.setPosition(Vector2i(0.f, 0.f));
+    janela.setFramerateLimit(120);
 }
 
 GerenciadorGrafico:: ~GerenciadorGrafico()
@@ -24,76 +26,22 @@ GerenciadorGrafico:: ~GerenciadorGrafico()
 
 void GerenciadorGrafico:: imprimeEntes()
 {
+    list<Ente*>::iterator ente;
 
-    /**
-     *  Chama as Funcoes imprimeProjeteis e imprimeEntidades
-     *
-     */
-
-     imprimeProjeteis();
-     imprimeEntidades();
-     imprimeObstaculos();
-
-}
-
-
-void GerenciadorGrafico:: imprimeProjeteis()
-{
-
-    /**
-     *  Percorre a lista de projeteis e os imprime
-     *
-     */
-
-    list<Projetil*>::iterator proj;
-
-    if (projeteis != NULL)
+    for (ente = entes.begin(); ente != entes.end(); ente++)
     {
-
-        for (proj = projeteis->begin(); proj != projeteis->end(); proj++)
-        {
-
-            janela->draw((*proj)->get_caixa());
-        }
-    }
-
-}
-
-void GerenciadorGrafico:: imprimeEntidades()
-{
-
-    /**
-     *  Percorre a lista de entidades e os imprime
-     *
-     */
-
-    list<Entidade*>::iterator ent;
-
-    if (entidades != NULL)
-    {
-
-        for (ent = entidades->begin(); ent != entidades->end(); ent++)
-        {
-
-            janela->draw((*ent)->get_caixa());
-        }
+        janela.draw((*ente)->get_caixa());
     }
 }
 
-void GerenciadorGrafico:: imprimeObstaculos()
- {
-     list<Obstaculo*>::iterator obst;
+void GerenciadorGrafico:: imprimeTextos()
+{
+    for (int i = 0; i < textos.size(); i++)
+    {
+        janela.draw(textos[i]);
+    }
+}
 
-     if (obstaculos != NULL)
-     {
-
-         for (obst = obstaculos->begin(); obst != obstaculos->end(); obst++)
-         {
-
-             janela->draw((*obst)->get_caixa());
-         }
-     }
- }
 
 /*===================================================================*/
 
@@ -102,41 +50,73 @@ void GerenciadorGrafico:: imprimeObstaculos()
 void GerenciadorGrafico:: atualizaJanela()
 {
 
-    janela->clear();
+    janela.clear();
     imprimeEntes();
-    janela->display();
+    imprimeTextos();
+    janela.display();
 }
 
 /*===================================================================*/
 
 /*===============================SETS===============================*/
 
-void GerenciadorGrafico:: setListaEntidades (list<Entidade*>* ent)
+void GerenciadorGrafico::incluiEnte(Ente* ente)
 {
-    entidades = ent;
+    entes.push_back(ente);
+}
+void GerenciadorGrafico::incluiEnte(list<Entidade*>* ple)
+{
+    list<Entidade*>:: iterator enti;
+    for (enti = ple->begin(); enti != ple->end(); enti++)
+    {
+        entes.push_back(static_cast<Ente*>(*enti));
+    }
+}
+void GerenciadorGrafico::incluiEnte(list<Projetil*>* plp)
+{
+    list<Projetil*>:: iterator proj;
+    for (proj = plp->begin(); proj != plp->end(); proj++)
+    {
+        entes.push_back(static_cast<Ente*>(*proj));
+    }
+}
+void GerenciadorGrafico::incluiEnte(list<Obstaculo*>* plo)
+{
+    list<Obstaculo*>:: iterator obst;
+    for (obst = plo->begin(); obst != plo->end(); obst++)
+    {
+        entes.push_back(static_cast<Ente*>(*obst));
+    }
 }
 
-void GerenciadorGrafico:: setListaProjeteis (list<Projetil*>* proj)
+void GerenciadorGrafico::incluiTexto(std::vector<Text>* t)
 {
-    projeteis = proj;
+    for (int i = 0; i < t->size(); i++)
+    {
+        textos.push_back((*t)[i]);
+    }
 }
 
-void GerenciadorGrafico:: setJanela (RenderWindow* j)
-{
-    janela = j;
-}
 
-void GerenciadorGrafico:: setListaObstaculos (list<Obstaculo*>* obst)
- {
-     obstaculos = obst;
- }
-
- 
-
- void GerenciadorGrafico:: inicializa(list<Entidade*>* ple, list<Obstaculo*>* plo, list<Projetil*>* plp)
- {
-     entidades = ple;
-     obstaculos = plo;
-     projeteis = plp;
- }
 /*===================================================================*/
+
+bool GerenciadorGrafico::get_JanelaAberta()
+{
+    return janela.isOpen();
+}
+
+bool GerenciadorGrafico::pega_evento(Event* ev)
+{
+    return janela.pollEvent(*ev);
+}
+
+void GerenciadorGrafico::fecha_janela()
+{
+    janela.close();
+}
+
+void GerenciadorGrafico::removeTodosEntes()
+{
+    entes.clear();
+    textos.clear();
+}

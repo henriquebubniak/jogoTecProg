@@ -17,9 +17,9 @@ class Jogo
 
 private:
 
-    Menu menu;
     GerenciadorGrafico gg;
     FaseFloresta floresta;
+    Menu menu;
     static float gravidade;
 
 public:

@@ -33,9 +33,6 @@ void FaseFloresta:: inicializa ()
     lista_obst.push_back(&lama1);
     lista_ent.push_back(static_cast<Entidade*>(&plataforma));
     lista_obst.push_back(&mina1);
-    pGerenciadorGrafico->incluiEnte(&lista_ent);
-    pGerenciadorGrafico->incluiEnte(&lista_proj);
-    pGerenciadorGrafico->incluiEnte(&lista_obst);
 
     camarada.set_pGG(pGerenciadorGrafico);
     chefao.set_pGG(pGerenciadorGrafico);

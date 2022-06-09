@@ -60,6 +60,8 @@ void Jogador::ataca()
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->set_pGG(pGerenciadorGrafico);
+            pGerenciadorGrafico->incluiEnte(static_cast<Ente*>(proj));
+
         }
         else if (velocidade.x < 0)
         {
@@ -68,6 +70,7 @@ void Jogador::ataca()
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->set_pGG(pGerenciadorGrafico);
+            pGerenciadorGrafico->incluiEnte(static_cast<Ente*>(proj));
         }
         pode_atirar = false;
         auxt = pfase->get_tempo();

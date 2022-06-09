@@ -24,7 +24,7 @@ private:
 public:
 
     //construtora e destrutora
-    Menu(GerenciadorGrafico* pgg);
+    Menu(GerenciadorGrafico* pgg, Jogo* j);
     ~Menu();
 
     //metodos

@@ -7,7 +7,7 @@ float Jogo::gravidade = 10.0;
 
 Jogo::Jogo(/* args */):
     floresta(&gg),
-    menu(&gg),
+    menu(&gg, this),
     gg()
 {
 

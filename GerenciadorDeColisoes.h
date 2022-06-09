@@ -17,12 +17,13 @@ private:
     list<Entidade*>* entidades;
     list<Projetil*>* projeteis;
     list<Obstaculo*>* obstaculos;
+    GerenciadorGrafico* pGerenciadorGrafico;
 
 
 public:
 
     //construtora e destrutora
-    GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL, list<Obstaculo*>* plo = NULL);
+    GerenciadorDeColisoes(list<Entidade*>* ple = NULL, list<Projetil*>* plp = NULL, list<Obstaculo*>* plo = NULL, GerenciadorGrafico* pgg = NULL);
     ~GerenciadorDeColisoes();
 
 

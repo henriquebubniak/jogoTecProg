@@ -27,6 +27,8 @@
 				"Militar1.cpp",
 				"Mina.cpp",
 				"Militar2.cpp",
+				"Ente.cpp",
+				"Lista.cpp",
 				"-I",
 				"/opt/homebrew/Cellar/sfml/2.5.1_1/include",
 				"-o",

@@ -36,6 +36,8 @@ void Inimigo::ataca()
             Projetil* proj = new Projetil(10, Vector2f(caixa.getPosition().x + dim.x + 1, caixa.getPosition().y), "imagens/projetild.png", aux_tiro.x, aux_tiro.y);
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
+            proj->set_pGG(pGerenciadorGrafico);
+            pGerenciadorGrafico->incluiEnte(static_cast<Ente*>(proj));
         }
         else if (velocidade.x < 0)
         {
@@ -44,6 +46,7 @@ void Inimigo::ataca()
             pfase->ad_proj(proj);
             proj->set_fase(pfase);
             proj->set_pGG(pGerenciadorGrafico);
+            pGerenciadorGrafico->incluiEnte(static_cast<Ente*>(proj));
         }
         pode_atirar = false;
         auxt = pfase->get_tempo();

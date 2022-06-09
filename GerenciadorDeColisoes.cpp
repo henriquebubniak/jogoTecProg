@@ -1,12 +1,14 @@
 #include "GerenciadorDeColisoes.h"
+#include "GerenciadorGrafico.h"
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo)
+GerenciadorDeColisoes:: GerenciadorDeColisoes(list<Entidade*>* ple, list<Projetil*>* plp, list<Obstaculo*>* plo, GerenciadorGrafico* pgg)
 {
     entidades = ple;
     projeteis = plp;
     obstaculos = plo;
+    pGerenciadorGrafico = pgg;
 }
 
 GerenciadorDeColisoes:: ~GerenciadorDeColisoes()
@@ -54,6 +56,7 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
                 {
                     (*ent)->dano((*proj)->get_forca());
                     plista_rm.push_back(*proj);
+                    pGerenciadorGrafico->removeEnte(static_cast<Ente*>(*proj));
                     break;
                 }
             }
@@ -64,7 +67,7 @@ void GerenciadorDeColisoes:: testaColisoesProjeteis()
         {
             projeteis->remove(*proj_rm);
             proj_rm++;
-            delete(*prev(proj_rm, 1));
+            //delete(*prev(proj_rm, 1));
         }
     }
 
@@ -91,6 +94,7 @@ void GerenciadorDeColisoes:: testaColisoesObstaculos ()
                     if(!((*obst)->get_tipo())){
 
                             lista_rm.push_back((*obst));
+                            pGerenciadorGrafico->removeEnte(static_cast<Ente*>(*obst));
                     }
 
                     break;

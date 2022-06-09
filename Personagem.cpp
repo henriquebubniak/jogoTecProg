@@ -28,6 +28,7 @@ void Personagem::dano(int d)
     if (hp <= 0)
     {
         pfase->rm_ent(static_cast<Entidade*>(this));
+        pGerenciadorGrafico->removeEnte(static_cast<Ente*>(this));
     }
     velocidade = Vector2f(0.f, 0.f);
 }

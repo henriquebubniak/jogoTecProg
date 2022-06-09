@@ -8,9 +8,10 @@
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 GerenciadorGrafico:: GerenciadorGrafico():
-    janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG")
+    janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"),
+    entes(),
+    textos()
 {
-
     janela.setPosition(Vector2i(0.f, 0.f));
     janela.setFramerateLimit(120);
 }
@@ -119,4 +120,9 @@ void GerenciadorGrafico::removeTodosEntes()
 {
     entes.clear();
     textos.clear();
+}
+
+void GerenciadorGrafico::removeEnte(Ente* ente)
+{
+    entes.remove(ente);
 }

@@ -4,13 +4,13 @@
 
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-Menu::Menu(GerenciadorGrafico* pgg):
+Menu::Menu(GerenciadorGrafico* pgg, Jogo* j):
 pGerenciadorGrafico(pgg),
+jogo(j),
 planoDeFundo("./imagens/menu.png")
 {
     set_valores();
     planoDeFundo.set_pGG(pgg);
-    pGerenciadorGrafico->removeTodosEntes();
     pGerenciadorGrafico->incluiEnte(&planoDeFundo);
     pGerenciadorGrafico->incluiTexto(&textos);
 }

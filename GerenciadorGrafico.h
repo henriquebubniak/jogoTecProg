@@ -35,7 +35,7 @@ public:
     void incluiEnte(list<Projetil*>* plp);
     void incluiEnte(list<Obstaculo*>* plo);
     void incluiTexto(std::vector<Text>* t);
-    void removeEnte();
+    void removeEnte(Ente* ente);
     void removeTodosEntes();    
 
     bool get_JanelaAberta();

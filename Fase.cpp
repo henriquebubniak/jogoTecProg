@@ -4,7 +4,7 @@
 
 Fase::Fase(GerenciadorGrafico* pgg):
     pGerenciadorGrafico(pgg),
-    gdc(&lista_ent, &lista_proj, &lista_obst),
+    gdc(&lista_ent, &lista_proj, &lista_obst, pgg),
     tempo(0)
 {
 
@@ -86,6 +86,11 @@ void Fase::rm_ent(Entidade* e)
 
 void Fase::executa_fase()
 {
+    pGerenciadorGrafico->removeTodosEntes();
+    pGerenciadorGrafico->incluiEnte(&lista_ent);
+    pGerenciadorGrafico->incluiEnte(&lista_proj);
+    pGerenciadorGrafico->incluiEnte(&lista_obst);
+    
     while (pGerenciadorGrafico->get_JanelaAberta())
     {
         Event event;
@@ -120,3 +125,7 @@ list<Obstaculo*>* Fase:: get_lista_obst ()
     return &lista_obst;
 }
 
+GerenciadorGrafico* Fase::get_gerenciador_grafico()
+{
+    return pGerenciadorGrafico;
+}

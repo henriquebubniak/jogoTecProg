@@ -9,7 +9,7 @@ FaseFloresta::FaseFloresta(GerenciadorGrafico* pgg):
     //militar1(&camarada),
     militar2(&camarada),
     plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/plataformaFloresta.png"),
-    plataforma2(Vector2f(1500.f, WINDOW_SIZEY-500), "imagens/plataformaFloresta.png"),
+    plataforma2(Vector2f(1500.f, WINDOW_SIZEY-500), "imagens/pltFloresta.png"),
     mina1()
 {
     inicializa ();
@@ -28,7 +28,6 @@ void FaseFloresta:: inicializa ()
 {
     srand(time(NULL));
     vector<Vector2f> posicoes_m1;
-    posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 300.f, WINDOW_SIZEY - 300.f));
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 500.f, WINDOW_SIZEY - 500.f));
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 700.f, WINDOW_SIZEY - 700.f));
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 1000.f, WINDOW_SIZEY - 900.f));
@@ -37,8 +36,8 @@ void FaseFloresta:: inicializa ()
     int n_militares1 = 0;
     int n_militares2 = 0;
     Militar1* auxmilitar1;
-    n_militares1 = rand() % 3 + 3;
-    n_militares2 = rand() & 3 + 3;
+    n_militares1 = rand() % 2 + 3;
+    n_militares2 = rand() % 2 + 3;
 
     for (int i = 0; i < n_militares1; i++)
     {

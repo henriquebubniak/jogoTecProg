@@ -25,17 +25,20 @@ Menu::~Menu()
 void Menu::set_valores()
 {
     pos = 1;
-    clicou = false;
+    apertado = false;
     enter = false;
     fonte.loadFromFile("./fontes/Wargate-Normal.otf");
     pos_mouse = Vector2f(0, 0);
     nomes_botoes.push_back("GREGVENTURES");
     nomes_botoes.push_back("FLORESTA");
+    nomes_botoes.push_back("DESERTO");
     pos_botoes.push_back(Vector2f(1400.f, 70.f));
     pos_botoes.push_back(Vector2f(1400.f, 400.f));
+    pos_botoes.push_back(Vector2f(1400.f, 570.f));
     tam_fontes.push_back(60);
     tam_fontes.push_back(80);
-    textos.resize(2);
+    tam_fontes.push_back(80);
+    textos.resize(3);
     for (int i = 0; i < textos.size(); i++)
     {
         textos[i].setFont(fonte);
@@ -45,6 +48,7 @@ void Menu::set_valores()
         textos[i].setPosition(pos_botoes[i]);
     }
     textos[1].setOutlineThickness(5.0);
+    textos[1].setOutlineColor(Color::Red);
 }
 
 /*===================================================================*/
@@ -61,18 +65,41 @@ void Menu::loop_eventos()
         while (pGerenciadorGrafico->pega_evento(&event))
             if (event.type == Event::Closed)
                 pGerenciadorGrafico->fecha_janela();
-        if (Keyboard::isKeyPressed(Keyboard::Down))
+        if (Keyboard::isKeyPressed(Keyboard::Down) && !apertado && pos < 2)
         {
             pos++;
             textos[pos].setOutlineThickness(5);
             textos[pos].setOutlineColor(Color::Red);
             textos[pos - 1].setOutlineThickness(1);
             textos[pos - 1].setOutlineColor(Color::Black);
+            apertado = true;
+        }
+        else if (!Keyboard::isKeyPressed(Keyboard::Down))
+        {
+            apertado = false;
+        }
+        if (Keyboard::isKeyPressed(Keyboard::Up) && !apertado && pos > 1)
+        {
+            pos--;
+            textos[pos].setOutlineThickness(5);
+            textos[pos].setOutlineColor(Color::Red);
+            textos[pos + 1].setOutlineThickness(1);
+            textos[pos + 1].setOutlineColor(Color::Black);
+            apertado = true;
+        }
+        else if (!Keyboard::isKeyPressed(Keyboard::Down))
+        {
+            apertado = false;
         }
         if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 1)
         {
             jogo->executa_fase_floresta();
         }
+        if (Keyboard::isKeyPressed(Keyboard::Enter) && pos == 2)
+        {
+            jogo->executa_fase_deserto();
+        }
+        pGerenciadorGrafico->incluiTexto(&textos);
         imprime();
     }
 }

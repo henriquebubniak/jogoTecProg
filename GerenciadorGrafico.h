@@ -37,6 +37,7 @@ public:
     void incluiTexto(std::vector<Text>* t);
     void removeEnte(Ente* ente);
     void removeTodosEntes();    
+    void removeTodosTextos();
 
     bool get_JanelaAberta();
     bool pega_evento(Event* ev);

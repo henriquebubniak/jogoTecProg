@@ -7,6 +7,7 @@ float Jogo::gravidade = 10.0;
 
 Jogo::Jogo(/* args */):
     floresta(&gg),
+    deserto(&gg),
     menu(&gg, this),
     gg()
 {
@@ -33,4 +34,9 @@ float Jogo::get_g(){
 void Jogo::executa_fase_floresta()
 {
     floresta.executa_fase();
+}
+
+void Jogo::executa_fase_deserto()
+{
+    deserto.executa_fase();
 }

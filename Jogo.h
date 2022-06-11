@@ -4,6 +4,7 @@
 #include <list>
 #include <iostream>
 #include "FaseFloresta.h"
+#include "FaseDeserto.h"
 #include "Menu.h"
 
 #define WINDOW_SIZEX 3000
@@ -19,6 +20,7 @@ private:
 
     GerenciadorGrafico gg;
     FaseFloresta floresta;
+    FaseDeserto deserto;
     Menu menu;
     static float gravidade;
 
@@ -29,6 +31,7 @@ public:
     ~Jogo();
 
     void executa_fase_floresta();
+    void executa_fase_deserto();
 
     //Funcoes
     static float get_g();

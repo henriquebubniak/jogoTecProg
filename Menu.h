@@ -7,7 +7,7 @@ class Menu
 private:
 
     int pos;
-    bool clicou;
+    bool apertado;
     bool enter;
 
     GerenciadorGrafico* pGerenciadorGrafico;

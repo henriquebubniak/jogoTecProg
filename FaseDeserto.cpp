@@ -1,20 +1,19 @@
-#include "FaseFloresta.h"
-
+#include "FaseDeserto.h"
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
-FaseFloresta::FaseFloresta(GerenciadorGrafico* pgg):
+FaseDeserto::FaseDeserto(GerenciadorGrafico* pgg):
     Fase(pgg),
     camarada(),
     chefao(&camarada),
     //militar1(&camarada),
     militar2(&camarada),
-    plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/plataformaFloresta.png"),
+    plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/plataformaDeserto.png"),
     mina1()
 {
     inicializa ();
 }
 
-FaseFloresta::~FaseFloresta()
+FaseDeserto::~FaseDeserto()
 {
 }
 
@@ -23,7 +22,7 @@ FaseFloresta::~FaseFloresta()
 /*==================INICIALIZA=========================*/
 
 
-void FaseFloresta:: inicializa ()
+void FaseDeserto:: inicializa ()
 {
     srand(time(NULL));
     vector<Vector2f> posicoes_m1;

@@ -92,6 +92,7 @@ void GerenciadorGrafico::incluiEnte(list<Obstaculo*>* plo)
 
 void GerenciadorGrafico::incluiTexto(std::vector<Text>* t)
 {
+    removeTodosTextos();
     for (int i = 0; i < t->size(); i++)
     {
         textos.push_back((*t)[i]);
@@ -125,4 +126,9 @@ void GerenciadorGrafico::removeTodosEntes()
 void GerenciadorGrafico::removeEnte(Ente* ente)
 {
     entes.remove(ente);
+}
+
+void GerenciadorGrafico::removeTodosTextos()
+{
+    textos.clear();
 }

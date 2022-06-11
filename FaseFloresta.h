@@ -17,6 +17,7 @@ private:
     Camarada camarada;
     Chefao chefao;
     Obstaculo plataforma;
+    Obstaculo plataforma2;
     Militar1 militar1;
     Militar2 militar2;
     Lama lama1;

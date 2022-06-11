@@ -2,7 +2,7 @@
 
 #include "FaseFloresta.h"
 class Jogo;
-class Menu
+class Menu: public Ente
 {
 private:
 

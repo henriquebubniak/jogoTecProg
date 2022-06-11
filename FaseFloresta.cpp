@@ -9,6 +9,7 @@ FaseFloresta::FaseFloresta(GerenciadorGrafico* pgg):
     //militar1(&camarada),
     militar2(&camarada),
     plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/plataformaFloresta.png"),
+    plataforma2(Vector2f(1500.f, WINDOW_SIZEY-500), "imagens/plataformaFloresta.png"),
     mina1()
 {
     inicializa ();
@@ -54,6 +55,7 @@ void FaseFloresta:: inicializa ()
     lista_ent.push_back(static_cast<Entidade*>(&militar2));
     lista_obst.push_back(&lama1);
     lista_ent.push_back(static_cast<Entidade*>(&plataforma));
+    lista_ent.push_back(static_cast<Entidade*>(&plataforma2));
     lista_obst.push_back(&mina1);
 
     camarada.set_pGG(pGerenciadorGrafico);
@@ -62,12 +64,14 @@ void FaseFloresta:: inicializa ()
     militar2.set_pGG(pGerenciadorGrafico);
     lama1.set_pGG(pGerenciadorGrafico);
     plataforma.set_pGG(pGerenciadorGrafico);
+    plataforma2.set_pGG(pGerenciadorGrafico);
     mina1.set_pGG(pGerenciadorGrafico);
 
 
     camarada.set_fase(static_cast<Fase*>(this));
     chefao.set_fase(static_cast<Fase*>(this));
     plataforma.set_fase(static_cast<Fase*>(this));
+    plataforma2.set_fase(static_cast<Fase*>(this));
     lama1.set_fase(static_cast<Fase*>(this));
     //militar1.set_fase(static_cast<Fase*>(this));
     militar2.set_fase(static_cast<Fase*>(this));

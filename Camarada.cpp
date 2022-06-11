@@ -8,7 +8,7 @@ using namespace std;
 /*==================CONSTRUTORA E DESTRUTORA=========================*/
 
 Camarada::Camarada():
-Jogador(Vector2f(0.f, WINDOW_SIZEY-200), "imagens/Camarada.png", 50, 1),
+Jogador(Vector2f(0.f, WINDOW_SIZEY-200), "imagens/Camarada.png", 50000, 1),
 nvl_Camarada(10)
 {
 

@@ -4,7 +4,7 @@
 #include "Chefao.h"
 #include "Camarada.h"
 #include "Obstaculo.h"
-#include "Lama.h"
+#include "Barril.h"
 #include "Mina.h"
 #include "Militar1.h"
 #include "Militar2.h"
@@ -19,7 +19,7 @@ private:
     Obstaculo plataforma2;
     Militar1 militar1;
     Militar2 militar2;
-    Lama lama1;
+    Barril barril;
     Mina mina1;
 
 

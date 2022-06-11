@@ -8,12 +8,14 @@ class Lista
 public:
     Lista(/* args */);
     ~Lista();
+
+    template<class Tipo2>
     class Elemento
     {
     private:
-        Tipo* conteudo_apontado;
-        Elemento* prox_elemento;
-        Elemento* prev_elemento;
+        Tipo2* conteudo_apontado;
+        Elemento<Tipo2>* prox_elemento;
+        Elemento<Tipo2>* prev_elemento;
     public:
         Elemento()
         {
@@ -22,15 +24,15 @@ public:
             prev_elemento = NULL;
         }
         ~Elemento() {}
-        Tipo* get_conteudo() { return conteudo_apontado; }
-        Elemento* get_prox() { return prox_elemento; }
-        Elemento* get_prev() { return prev_elemento; }
+        Tipo2* get_conteudo() { return conteudo_apontado; }
+        Elemento<Tipo2>* get_prox() { return prox_elemento; }
+        Elemento<Tipo2>* get_prev() { return prev_elemento; }
     };
-    Elemento* get_prime_elem();
-    Elemento* get_ult_elem();
+    Elemento<Tipo>* get_prime_elem();
+    Elemento<Tipo>* get_ult_elem();
 private:
-    Elemento* primeiro_elemento;
-    Elemento* ultimo_elemento;
+    Elemento<Tipo>* primeiro_elemento;
+    Elemento<Tipo>* ultimo_elemento;
 
 };
 

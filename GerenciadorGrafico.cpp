@@ -10,10 +10,12 @@
 GerenciadorGrafico:: GerenciadorGrafico():
     janela(VideoMode(WINDOW_SIZEX, WINDOW_SIZEY), "GREG"),
     entes(),
-    textos()
+    textos(),
+    view()
 {
     janela.setPosition(Vector2i(0.f, 0.f));
     janela.setFramerateLimit(120);
+    view.setSize(WINDOW_SIZEX, WINDOW_SIZEY);
 }
 
 GerenciadorGrafico:: ~GerenciadorGrafico()
@@ -131,4 +133,12 @@ void GerenciadorGrafico::removeEnte(Ente* ente)
 void GerenciadorGrafico::removeTodosTextos()
 {
     textos.clear();
+}
+
+void GerenciadorGrafico:: atualizaView (Vector2f posCam){
+
+    view.setCenter(posCam.x, 743.5);
+    cout << posCam.y<< endl;
+    janela.setView(view);
+
 }

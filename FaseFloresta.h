@@ -14,7 +14,7 @@ class FaseFloresta: public Fase
 
 private:
 
-    Camarada camarada;
+
     Chefao chefao;
     Obstaculo plataforma;
     Obstaculo plataforma2;

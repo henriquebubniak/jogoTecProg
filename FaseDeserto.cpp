@@ -37,7 +37,7 @@ void FaseDeserto:: inicializa ()
     int n_militares2 = 0;
     Militar1* auxmilitar1;
     n_militares1 = rand() % 2 + 3;
-    n_militares2 = rand() & 2 + 3;
+    n_militares2 = rand() % 2 + 3;
 
     for (int i = 0; i < n_militares1; i++)
     {

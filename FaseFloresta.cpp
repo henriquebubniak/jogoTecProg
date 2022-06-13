@@ -4,12 +4,11 @@
 
 FaseFloresta::FaseFloresta(GerenciadorGrafico* pgg):
     Fase(pgg),
-    camarada(),
     chefao(&camarada),
     //militar1(&camarada),
     militar2(&camarada),
-    plataforma(Vector2f(0.f, WINDOW_SIZEY-70), "imagens/plataformaFloresta.png"),
-    plataforma2(Vector2f(1500.f, WINDOW_SIZEY-500), "imagens/pltFloresta.png"),
+    plataforma(Vector2f(-1500.f, WINDOW_SIZEY-70), "imagens/plataformaFloresta.png"),
+    plataforma2(Vector2f(1500.f, WINDOW_SIZEY-190), "imagens/pltFloresta.png"),
     mina1()
 {
     inicializa ();
@@ -32,7 +31,7 @@ void FaseFloresta:: inicializa ()
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 700.f, WINDOW_SIZEY - 700.f));
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 1000.f, WINDOW_SIZEY - 900.f));
     posicoes_m1.push_back(Vector2f(WINDOW_SIZEX - 1300.f, WINDOW_SIZEY - 1100.f));
-    
+
     int n_militares1 = 0;
     int n_militares2 = 0;
     Militar1* auxmilitar1;
@@ -46,7 +45,7 @@ void FaseFloresta:: inicializa ()
         lista_ent.push_back(static_cast<Entidade*>(auxmilitar1));
         auxmilitar1->set_pGG(pGerenciadorGrafico);
         auxmilitar1->set_fase(static_cast<Fase*>(this));
-    }   
+    }
 
     lista_ent.push_back(static_cast<Entidade*>(&camarada));
     lista_ent.push_back(static_cast<Entidade*>(&chefao));

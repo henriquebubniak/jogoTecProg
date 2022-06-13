@@ -5,6 +5,7 @@
 Fase::Fase(GerenciadorGrafico* pgg):
     pGerenciadorGrafico(pgg),
     gdc(&lista_ent, &lista_proj, &lista_obst, pgg),
+    camarada(),
     tempo(0)
 {
 
@@ -24,6 +25,7 @@ void Fase::atualiza()
     move_ents();
     ataca_ents();
     gdc.testaColisoes();
+    pGerenciadorGrafico->atualizaView(camarada.get_pos());
     pGerenciadorGrafico->atualizaJanela();
     tempo += 8.333;
 }
@@ -90,7 +92,7 @@ void Fase::executa_fase()
     pGerenciadorGrafico->incluiEnte(&lista_ent);
     pGerenciadorGrafico->incluiEnte(&lista_proj);
     pGerenciadorGrafico->incluiEnte(&lista_obst);
-    
+
     while (pGerenciadorGrafico->get_JanelaAberta())
     {
         Event event;

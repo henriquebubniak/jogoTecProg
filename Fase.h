@@ -2,6 +2,7 @@
 
 #include <list>
 #include "Entidade.h"
+#include "Camarada.h"
 #include "Projetil.h"
 #include "Obstaculo.h"
 #include "GerenciadorDeColisoes.h"
@@ -17,9 +18,12 @@ protected:
     list<Projetil*> lista_proj;
     list<Obstaculo*> lista_obst;
 
+
     GerenciadorDeColisoes gdc;
     GerenciadorGrafico* pGerenciadorGrafico;
     float tempo;
+
+    Camarada camarada;
 
 public:
 

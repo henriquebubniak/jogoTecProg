@@ -17,6 +17,7 @@ private:
     std::vector<Text> textos;
 
     RenderWindow janela;
+    View view;
 
 public:
 
@@ -28,6 +29,7 @@ public:
     void imprimeEntes();
     void imprimeTextos();
     void atualizaJanela();
+    void atualizaView(Vector2f pos);
 
     //sets
     void incluiEnte(Ente* ente);
@@ -36,7 +38,7 @@ public:
     void incluiEnte(list<Obstaculo*>* plo);
     void incluiTexto(std::vector<Text>* t);
     void removeEnte(Ente* ente);
-    void removeTodosEntes();    
+    void removeTodosEntes();
     void removeTodosTextos();
 
     bool get_JanelaAberta();
